@@ -6,7 +6,9 @@ namespace Opgaver
     {
         static void Main(string[] args)
         {
-            
+            LommeregnerOpg lommeregnerOpg = new LommeregnerOpg();
+
+            lommeregnerOpg.Lommeregner();
         }
     }
 }
