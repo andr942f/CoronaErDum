@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Edabit
 {
@@ -20,12 +21,23 @@ namespace Edabit
                 return true;
             else return false;
         }
+        /// <summary> Letters Only
+        /// <para>Write a function that removes any non-letters from a string, returning a well-known film title.</para>
+        /// </summary>
+        public string LettersOnly(string str) => Regex.Replace(str, "[^a-zA-Z]", string.Empty);
         /// <summary> Find the Missing Number
         /// <para>Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.</para>
         /// </summary>
-        public static int MissingNum(int[] arr)
-        {
-
-        }
+        public int MissingNum(int[] arr) => Enumerable.Range(1, 10).Except(arr).First();
+        /// <summary> Case Insensitive Comparison
+        /// <para>Write a function that validates whether two strings are identical. Make it case insensitive.</para>
+        /// </summary>
+        public bool match(string s1, string s2) => (s1.Equals(s2, StringComparison.OrdinalIgnoreCase));
+        /// <summary> Return the Four Letter Strings
+        /// <para>Create a function that takes an array of strings and returns the words that are exactly four letters.</para>
+        /// </summary>
+        public string[] IsFourLetters(string[] arr) => arr.Where(length => length.Length == 4).ToArray();
     }
 }
+
+
