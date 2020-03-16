@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Edabit.csproj",
-      "projectName": "Edabit",
-      "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Edabit.csproj",
+      "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Opgaver.csproj",
+      "projectName": "Opgaver",
+      "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Opgaver.csproj",
       "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\obj\\",
       "projectStyle": "PackageReference",
