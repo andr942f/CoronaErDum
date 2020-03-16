@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andreas\\source\\repos\\Lommeregner\\Lommeregner\\Lommeregner.csproj": {}
+    "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\LommeregnerOpg\\Lommeregner\\Lommeregner\\Lommeregner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andreas\\source\\repos\\Lommeregner\\Lommeregner\\Lommeregner.csproj": {
+    "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\LommeregnerOpg\\Lommeregner\\Lommeregner\\Lommeregner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\source\\repos\\Lommeregner\\Lommeregner\\Lommeregner.csproj",
+        "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\LommeregnerOpg\\Lommeregner\\Lommeregner\\Lommeregner.csproj",
         "projectName": "Lommeregner",
-        "projectPath": "C:\\Users\\Andreas\\source\\repos\\Lommeregner\\Lommeregner\\Lommeregner.csproj",
+        "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\LommeregnerOpg\\Lommeregner\\Lommeregner\\Lommeregner.csproj",
         "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\source\\repos\\Lommeregner\\Lommeregner\\obj\\",
+        "outputPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\LommeregnerOpg\\Lommeregner\\Lommeregner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
