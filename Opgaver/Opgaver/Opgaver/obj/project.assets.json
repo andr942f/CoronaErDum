@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Opgaver.csproj",
+      "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\Opgaver\\Edabit\\Opgaver.csproj",
       "projectName": "Opgaver",
-      "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\Opgaver.csproj",
+      "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\Opgaver\\Edabit\\Opgaver.csproj",
       "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\EdabitOpg\\Edabit\\obj\\",
+      "outputPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\Opgaver\\Edabit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
