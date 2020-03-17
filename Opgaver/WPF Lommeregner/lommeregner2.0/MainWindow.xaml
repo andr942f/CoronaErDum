@@ -65,7 +65,6 @@
         <Button x:Name="CE" Grid.Row="2" Grid.Column="1" Click="CE_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">CE</Button>
         <Button x:Name="Backspace" Grid.Row="2" Grid.Column="0" Content="&lt;=" Click="Backspace_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
 
-
         <!-- textbox -->
         <TextBox x:Name="Window" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="1" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
         <TextBox x:Name="LastQuery" TextAlignment="Right" IsReadOnly="True" VerticalAlignment="Bottom" FontSize="20" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
