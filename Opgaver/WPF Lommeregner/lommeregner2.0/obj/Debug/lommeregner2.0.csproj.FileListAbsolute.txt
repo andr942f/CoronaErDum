@@ -12,3 +12,17 @@ C:\Users\Andreas\source\repos\lommeregner2.0\lommeregner2.0\obj\Debug\lommeregne
 C:\Users\Andreas\source\repos\lommeregner2.0\lommeregner2.0\obj\Debug\lommeregner2.0.csproj.GenerateResource.cache
 C:\Users\Andreas\source\repos\lommeregner2.0\lommeregner2.0\obj\Debug\lommeregner2.0.exe
 C:\Users\Andreas\source\repos\lommeregner2.0\lommeregner2.0\obj\Debug\lommeregner2.0.pdb
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\bin\Debug\lommeregner2.0.exe.config
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\bin\Debug\lommeregner2.0.exe
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\bin\Debug\lommeregner2.0.pdb
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0.csprojAssemblyReference.cache
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\MainWindow.g.cs
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\App.g.cs
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0_MarkupCompile.cache
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0_MarkupCompile.lref
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\MainWindow.baml
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0.g.resources
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2._0.Properties.Resources.resources
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0.csproj.GenerateResource.cache
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0.exe
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\WPF Lommeregner\lommeregner2.0\obj\Debug\lommeregner2.0.pdb

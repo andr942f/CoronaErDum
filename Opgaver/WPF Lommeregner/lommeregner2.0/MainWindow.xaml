@@ -9,10 +9,11 @@
         " Height="450" Width="300">
     <Grid Margin="0,0,2,13">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="72*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -25,16 +26,16 @@
         </Grid.RowDefinitions>
 
         <!-- Number Buttons -->
-        <Button x:Name="B0" Grid.Row="5" Grid.Column="1" Click="B0_Click">0</Button>
+        <Button x:Name="B0" Grid.Row="5" Grid.Column="1" Click="B0_Click" Grid.ColumnSpan="2">0</Button>
         <Button x:Name="B1" Grid.Row="4" Grid.Column="0" Click="B1_Click">1</Button>
-        <Button x:Name="B2" Grid.Row="4" Grid.Column="1" Click="B2_Click">2</Button>
-        <Button x:Name="B3" Grid.Row="4" Grid.Column="2" Click="B3_Click">3</Button>
+        <Button x:Name="B2" Grid.Row="4" Grid.Column="1" Click="B2_Click" Grid.ColumnSpan="2">2</Button>
+        <Button x:Name="B3" Grid.Row="4" Grid.Column="3" Click="B3_Click">3</Button>
         <Button x:Name="B4" Grid.Row="3" Grid.Column="0" Click="B4_Click">4</Button>
-        <Button x:Name="B5" Grid.Row="3" Grid.Column="1" Click="B5_Click">5</Button>
-        <Button x:Name="B6" Grid.Row="3" Grid.Column="2" Click="B6_Click">6</Button>
+        <Button x:Name="B5" Grid.Row="3" Grid.Column="1" Click="B5_Click" Grid.ColumnSpan="2">5</Button>
+        <Button x:Name="B6" Grid.Row="3" Grid.Column="3" Click="B6_Click">6</Button>
         <Button x:Name="B7" Grid.Row="2" Grid.Column="0" Click="B7_Click">7</Button>
-        <Button x:Name="B8" Grid.Row="2" Grid.Column="1" Click="B8_Click">8</Button>
-        <Button x:Name="B9" Grid.Row="2" Grid.Column="2" Click="B9_Click">9</Button>
+        <Button x:Name="B8" Grid.Row="2" Grid.Column="1" Click="B8_Click" Grid.ColumnSpan="2">8</Button>
+        <Button x:Name="B9" Grid.Row="2" Grid.Column="3" Click="B9_Click">9</Button>
 
         <!-- Operator Buttons -->
         <Button x:Name="Plus" Grid.Row="4" Grid.Column="4" Click="Plus_Click">+</Button>
@@ -42,13 +43,15 @@
         <Button x:Name="Multiply" Grid.Row="2" Grid.Column="4" Click="Multiply_Click">*</Button>
         <Button x:Name="Divide" Grid.Row="1" Grid.Column="4" Click="Divide_Click">/</Button>
         <Button x:Name="Equals" Grid.Row="5" Grid.Column="4" Click="Equals_Click">=</Button>
+        <Button x:Name="Dot" Grid.Row="5" Grid.Column="3" Click="Dot_Click">.</Button>
+        <Button x:Name="PandM" Grid.Row="5" Grid.Column="0" Click="PandM_Click">+/-</Button>
 
         <!-- Operator Buttons -->
-        <Button x:Name="CE" Grid.Row="1" Grid.Column="1" Click="CE_Click">CE</Button>
-        <Button x:Name="C" Grid.Row="1" Grid.Column="2" Click="C_Click">C</Button>
+        <Button x:Name="C" Grid.Row="1" Grid.Column="3" Click="C_Click">C</Button>
+        <Button x:Name="CE" Grid.Row="1" Grid.Column="1" Click="CE_Click" Grid.ColumnSpan="2">CE</Button>
         <Button x:Name="Backspace" Grid.Row="1" Grid.Column="0" Content="&lt;=" Click="Backspace_Click"></Button>
 
         <!-- textbox -->
-        <TextBox x:Name="Input" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="4">0</TextBox>
+        <TextBox x:Name="Window" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,0,0,67" Grid.RowSpan="2">0</TextBox>
     </Grid>
 </Window>
