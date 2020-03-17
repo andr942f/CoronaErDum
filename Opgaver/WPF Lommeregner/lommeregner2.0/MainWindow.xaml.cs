@@ -49,12 +49,18 @@ namespace lommeregner2._0
 
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
+            // Call the "Eval" function from inside javascript using the Guid [0E59F1D5-1FBE-11D0-8FF2-00A0D10038BC]
             Type id = Type.GetTypeFromCLSID(Guid.Parse("0E59F1D5-1FBE-11D0-8FF2-00A0D10038BC"));
             dynamic lang = Activator.CreateInstance(id, false);
             lang.Language = "javascript";
+            //end
 
             try
             {
+                //"Eval" function being used
+                //val a = eval("10 * 20") + <br>; = 200
+                //val b = eval("2 + 2") + <br>; = 4
+                // val c = eval("10 + 17") + <br>; = 27
                 var input = lang.Eval(Window.Text.ToString());
                 Window.Text = Window.Text + "=" + input;
             }
