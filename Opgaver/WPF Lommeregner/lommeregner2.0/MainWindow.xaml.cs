@@ -33,13 +33,32 @@ namespace lommeregner2._0
         private void Multiply_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "*";
         private void Divide_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "/";
         private void Dot_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + ".";
-        private void PandM_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "negate(0)";
+        private void para_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "()";
+        private void PI_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "3.14";
+
+        #region circumference
+        private void Circle_Click(object sender, RoutedEventArgs e) => Window.Text = "r * r * 3.14";
+
+        private void Square_Click(object sender, RoutedEventArgs e) => Window.Text = "l * b";
+
+        private void Trapezoid_Click(object sender, RoutedEventArgs e) => Window.Text = "0.5 * (a + c) * h";
+
+        private void Cone_Click(object sender, RoutedEventArgs e) => Window.Text = "h * r * r * 3.14 / 3";
+        #endregion
         #endregion
 
-        #region Remove & clear
-        private void CE_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text.Remove(Window.Text.Length - Window.Text.Length);
 
-        private void C_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text.Remove(Window.Text.Length - Window.Text.Length);
+        #region Remove & clear
+        private void CE_Click(object sender, RoutedEventArgs e)
+        {
+            Window.Text = "";
+            LastQuery.Text = "";
+        }
+        private void C_Click(object sender, RoutedEventArgs e)
+        {
+            Window.Text = "";
+            LastQuery.Text = "";
+        }
         private void Backspace_Click(object sender, RoutedEventArgs e)
         {
             if (Window.Text != "")
@@ -47,6 +66,11 @@ namespace lommeregner2._0
         }
         #endregion
 
+        /// <summary> Equals all numbers together
+        /// <param> When clicked, calculate everything in the text window and write the result in the field above</param>
+        /// </summary>
+        /// <param name="sender">Ignore</param>
+        /// <param name="e">Ignore</param>
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
             // Call the "Eval" function from inside javascript using the Guid [0E59F1D5-1FBE-11D0-8FF2-00A0D10038BC]
@@ -62,13 +86,13 @@ namespace lommeregner2._0
                 //val b = eval("2 + 2") + <br>; = 4
                 // val c = eval("10 + 17") + <br>; = 27
                 var input = lang.Eval(Window.Text.ToString());
-                Window.Text = Window.Text + "=" + input;
+                LastQuery.Text = Window.Text;
+                Window.Text = $"{input}";
             }
             catch (SystemException)
             {
                 Window.Text = "Syntax Error";
             }
         }
-
     }
 }

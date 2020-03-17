@@ -6,14 +6,20 @@
         xmlns:local="clr-namespace:lommeregner2._0"
         mc:Ignorable="d"
         Title="Calculator
-        " Height="450" Width="300">
+        " Height="430" Width="330" BorderBrush="#FF191919" Foreground="#FF191919" Background="#FF191919" MinWidth="330" MinHeight="430" Icon="Calculator-Android-R.png">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo/>
+    </Window.TaskbarItemInfo>
+    <Window.Effect>
+        <DropShadowEffect Opacity="0.5"/>
+    </Window.Effect>
     <Grid Margin="0,0,2,13">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="63*"/>
-            <ColumnDefinition Width="72*"/>
-            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -23,35 +29,45 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <!-- Number Buttons -->
-        <Button x:Name="B0" Grid.Row="5" Grid.Column="1" Click="B0_Click" Grid.ColumnSpan="2">0</Button>
-        <Button x:Name="B1" Grid.Row="4" Grid.Column="0" Click="B1_Click">1</Button>
-        <Button x:Name="B2" Grid.Row="4" Grid.Column="1" Click="B2_Click" Grid.ColumnSpan="2">2</Button>
-        <Button x:Name="B3" Grid.Row="4" Grid.Column="3" Click="B3_Click">3</Button>
-        <Button x:Name="B4" Grid.Row="3" Grid.Column="0" Click="B4_Click">4</Button>
-        <Button x:Name="B5" Grid.Row="3" Grid.Column="1" Click="B5_Click" Grid.ColumnSpan="2">5</Button>
-        <Button x:Name="B6" Grid.Row="3" Grid.Column="3" Click="B6_Click">6</Button>
-        <Button x:Name="B7" Grid.Row="2" Grid.Column="0" Click="B7_Click">7</Button>
-        <Button x:Name="B8" Grid.Row="2" Grid.Column="1" Click="B8_Click" Grid.ColumnSpan="2">8</Button>
-        <Button x:Name="B9" Grid.Row="2" Grid.Column="3" Click="B9_Click">9</Button>
+        <Button x:Name="B0" Grid.Row="6" Grid.Column="1" Click="B0_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">0</Button>
+        <Button x:Name="B1" Grid.Row="5" Grid.Column="0" Click="B1_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">1</Button>
+        <Button x:Name="B2" Grid.Row="5" Grid.Column="1" Click="B2_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">2</Button>
+        <Button x:Name="B3" Grid.Row="5" Grid.Column="2" Click="B3_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">3</Button>
+        <Button x:Name="B4" Grid.Row="4" Grid.Column="0" Click="B4_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">4</Button>
+        <Button x:Name="B5" Grid.Row="4" Grid.Column="1" Click="B5_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">5</Button>
+        <Button x:Name="B6" Grid.Row="4" Grid.Column="2" Click="B6_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">6</Button>
+        <Button x:Name="B7" Grid.Row="3" Grid.Column="0" Click="B7_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">7</Button>
+        <Button x:Name="B8" Grid.Row="3" Grid.Column="1" Click="B8_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">8</Button>
+        <Button x:Name="B9" Grid.Row="3" Grid.Column="2" Click="B9_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">9</Button>
 
         <!-- Operator Buttons -->
-        <Button x:Name="Plus" Grid.Row="4" Grid.Column="4" Click="Plus_Click">+</Button>
-        <Button x:Name="Minus" Grid.Row="3" Grid.Column="4" Click="Minus_Click">-</Button>
-        <Button x:Name="Multiply" Grid.Row="2" Grid.Column="4" Click="Multiply_Click">*</Button>
-        <Button x:Name="Divide" Grid.Row="1" Grid.Column="4" Click="Divide_Click">/</Button>
-        <Button x:Name="Equals" Grid.Row="5" Grid.Column="4" Click="Equals_Click">=</Button>
-        <Button x:Name="Dot" Grid.Row="5" Grid.Column="3" Click="Dot_Click">.</Button>
-        <Button x:Name="PandM" Grid.Row="5" Grid.Column="0" Click="PandM_Click">+/-</Button>
+        <Button x:Name="Plus" Grid.Row="5" Grid.Column="3" Click="Plus_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">+</Button>
+        <Button x:Name="Minus" Grid.Row="4" Grid.Column="3" Click="Minus_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">-</Button>
+        <Button x:Name="Multiply" Grid.Row="3" Grid.Column="3" Click="Multiply_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">*</Button>
+        <Button x:Name="Divide" Grid.Row="2" Grid.Column="3" Click="Divide_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">/</Button>
+        <Button x:Name="Equals" Grid.Row="6" Grid.Column="5" Click="Equals_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">=</Button>
+        <Button x:Name="Dot" Grid.Row="6" Grid.Column="3" Click="Dot_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">.</Button>
+        <Button x:Name="PI" Grid.Row="6" Grid.Column="2" Click="PI_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">PI</Button>
+        <Button x:Name="para" Grid.Row="6" Grid.Column="0" Click="para_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">()</Button>
 
-        <!-- Operator Buttons -->
-        <Button x:Name="C" Grid.Row="1" Grid.Column="3" Click="C_Click">C</Button>
-        <Button x:Name="CE" Grid.Row="1" Grid.Column="1" Click="CE_Click" Grid.ColumnSpan="2">CE</Button>
-        <Button x:Name="Backspace" Grid.Row="1" Grid.Column="0" Content="&lt;=" Click="Backspace_Click"></Button>
+        <!-- sercomferance stuff -->
+        <Button x:Name="Circle" Grid.Row="2" Grid.Column="4" Content="Circle" VerticalAlignment="Top" Click="Circle_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
+        <Button x:Name="Square" Grid.Row="3" Grid.Column="5" Content="Square" Click="Square_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
+        <Button x:Name="Trapezoid" Grid.Row="4" Grid.Column="5" Content="Trapezoid" Click="Trapezoid_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
+        <Button x:Name="Cone" Grid.Row="5" Grid.Column="5" Content="Cone" Click="Cone_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
+
+        <!-- clear buttons Buttons -->
+        <Button x:Name="C" Grid.Row="2" Grid.Column="2" Click="C_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">C</Button>
+        <Button x:Name="CE" Grid.Row="2" Grid.Column="1" Click="CE_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">CE</Button>
+        <Button x:Name="Backspace" Grid.Row="2" Grid.Column="0" Content="&lt;=" Click="Backspace_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
+
 
         <!-- textbox -->
-        <TextBox x:Name="Window" IsReadOnly="True" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,0,0,67" Grid.RowSpan="2">0</TextBox>
+        <TextBox x:Name="Window" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="1" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
+        <TextBox x:Name="LastQuery" TextAlignment="Right" IsReadOnly="True" VerticalAlignment="Bottom" FontSize="20" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
     </Grid>
 </Window>

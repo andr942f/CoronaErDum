@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fl4k-borderlands-3-uhdpaper.com-hd-5.513.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Calculator-Android-R.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
