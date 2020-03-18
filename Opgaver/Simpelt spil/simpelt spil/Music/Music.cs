@@ -12,7 +12,7 @@ namespace simpelt_spil.Music
         {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = $"{AppDomain.CurrentDomain.BaseDirectory}\\Music\\{playSwitch}.wav";
-            player.Play();
+            player.PlayLooping();
         }
     }
 }

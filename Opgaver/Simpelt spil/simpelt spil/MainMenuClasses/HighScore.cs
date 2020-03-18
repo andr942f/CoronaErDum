@@ -16,29 +16,29 @@ namespace simpelt_spil
             // count of ranks
             int hs = 1;
             // Layout used in the program to make it look more flawless
-            string Layout = "{0,10} {1,15} {2,15}";
+            string Layout = "{0,5} {1,-15} {2,-15} {3,-15}";
 
             //Go through top 5 people
-            Console.WriteLine(Layout, "RANK", "SCORE", "NAME");
+            Console.WriteLine(Layout,"", "RANK", "SCORE", "NAME");
             Line.Length(50);
             foreach (var item in db.ViewAll())
             {
                 switch (hs)
                 {
                     case 1:
-                        Console.WriteLine(Layout, $"{hs++}st", $"#{item.Score}", $"{item.Name}");
+                        Console.WriteLine(Layout, "", $"{hs++}st", $"#{item.Score}", $"{item.Name}");
                         break;
                     case 2:
-                        Console.WriteLine(Layout, $"{hs++}nd", $"#{item.Score}", $"{item.Name}");
+                        Console.WriteLine(Layout, "", $"{hs++}nd", $"#{item.Score}", $"{item.Name}");
                         break;
                     case 3:
-                        Console.WriteLine(Layout, $"{hs++}rd", $"#{item.Score}", $"{item.Name}");
+                        Console.WriteLine(Layout, "", $"{hs++}rd", $"#{item.Score}", $"{item.Name}");
                         break;
                     case 4:
-                        Console.WriteLine(Layout, $"{hs++}th", $"#{item.Score}", $"{item.Name}");
+                        Console.WriteLine(Layout, "", $"{hs++}th", $"#{item.Score}", $"{item.Name}");
                         break;
                     case 5:
-                        Console.WriteLine(Layout, $"{hs++}th", $"#{item.Score}", $"{item.Name}");
+                        Console.WriteLine(Layout, "", $"{hs++}th", $"#{item.Score}", $"{item.Name}");
                         break;
                 }
             }

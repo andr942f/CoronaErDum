@@ -11,3 +11,7 @@ C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\obj\Debug\simpelt spil.csproj.GenerateResource.cache
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\bin\Debug\Music\Best Friend.wav
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\bin\Debug\Music\Journey.wav
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\bin\Debug\simpelt spil.exe.manifest
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\bin\Debug\simpelt spil.application
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\obj\Debug\simpelt spil.exe.manifest
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Simpelt spil\simpelt spil\obj\Debug\simpelt spil.application

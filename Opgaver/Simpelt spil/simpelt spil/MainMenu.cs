@@ -12,11 +12,9 @@ namespace simpelt_spil
             {
                 case 1:
                     Music.Music.Player("Best Friend");
-                    random.Next(1, 3);
                     break;
                 case 2:
                     Music.Music.Player("Journey");
-                    random.Next(1, 3);
                     break;
             }
             //end
@@ -32,7 +30,7 @@ namespace simpelt_spil
 
                 //menu options
                 Console.WriteLine("=====WELCOME=====");
-                Console.WriteLine("To a simple game");
+                Console.WriteLine("To a Simple Game");
                 Line.Length(17);
                 Console.WriteLine();
                 Console.WriteLine("1) Start game");
@@ -58,6 +56,7 @@ namespace simpelt_spil
                         Environment.Exit(0);
                         break;
                 }
+                Console.Clear();
             }
         }
     }
