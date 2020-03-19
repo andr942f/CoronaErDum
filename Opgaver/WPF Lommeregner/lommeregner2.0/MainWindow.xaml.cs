@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace lommeregner2._0
 {
@@ -13,40 +15,56 @@ namespace lommeregner2._0
         {
             InitializeComponent();
         }
+
         #region B0-9
-        private void B0_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "0";
-        private void B1_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "1";
-        private void B2_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "2";
-        private void B3_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "3";
-        private void B4_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "4";
-        private void B5_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "5";
-        private void B6_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "6";
-        private void B7_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "7";
-        private void B8_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "8";
-        private void B9_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "9";
+        private void B0_Click(object sender, RoutedEventArgs e) => Window.Text += "0";
+        private void B1_Click(object sender, RoutedEventArgs e) => Window.Text += "1";
+        private void B2_Click(object sender, RoutedEventArgs e) => Window.Text += "2";
+        private void B3_Click(object sender, RoutedEventArgs e) => Window.Text += "3";
+        private void B4_Click(object sender, RoutedEventArgs e) => Window.Text += "4";
+        private void B5_Click(object sender, RoutedEventArgs e) => Window.Text += "5";
+        private void B6_Click(object sender, RoutedEventArgs e) => Window.Text += "6";
+        private void B7_Click(object sender, RoutedEventArgs e) => Window.Text += "7";
+        private void B8_Click(object sender, RoutedEventArgs e) => Window.Text += "8";
+        private void B9_Click(object sender, RoutedEventArgs e) => Window.Text += "9";
 
         #endregion
 
         #region Operator chooser
-        private void Plus_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "+";
-        private void Minus_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "-";
-        private void Multiply_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "*";
-        private void Divide_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "/";
-        private void Dot_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + ".";
-        private void para_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "()";
-        private void PI_Click(object sender, RoutedEventArgs e) => Window.Text = Window.Text + "3.14";
+        private void Plus_Click(object sender, RoutedEventArgs e) => Window.Text += "+";
+        private void Minus_Click(object sender, RoutedEventArgs e) => Window.Text += "-";
+        private void Multiply_Click(object sender, RoutedEventArgs e) => Window.Text += "*";
+        private void Divide_Click(object sender, RoutedEventArgs e) => Window.Text += "/";
+        private void Dot_Click(object sender, RoutedEventArgs e) => Window.Text += ".";
+        private void para_Click(object sender, RoutedEventArgs e) => Window.Text += "()";
+        private void PI_Click(object sender, RoutedEventArgs e) => Window.Text += "3.14";
+
+        #endregion
 
         #region circumference
-        private void Circle_Click(object sender, RoutedEventArgs e) => Window.Text = "r * r * 3.14";
+        public Draw draw = new Draw();
 
-        private void Square_Click(object sender, RoutedEventArgs e) => Window.Text = "l * b";
+        // r * r * 3.14
+        private void Circle_Click(object sender, RoutedEventArgs e)
+        {
+            draw.Cirkel();
+        }
+        // l * b
+        private void Square_Click(object sender, RoutedEventArgs e)
+        {
+            draw.Cirkel();
+        }
+        // (a + c) * h * 0.5 
+        private void Trapezoid_Click(object sender, RoutedEventArgs e)
+        {
+            draw.Trapez();
+        }
+        // h * r * r * 3.14 / 3
+        private void Cone_Click(object sender, RoutedEventArgs e)
+        {
 
-        private void Trapezoid_Click(object sender, RoutedEventArgs e) => Window.Text = "0.5 * (a + c) * h";
-
-        private void Cone_Click(object sender, RoutedEventArgs e) => Window.Text = "h * r * r * 3.14 / 3";
+        }
         #endregion
-        #endregion
-
 
         #region Remove & clear
         private void CE_Click(object sender, RoutedEventArgs e)
