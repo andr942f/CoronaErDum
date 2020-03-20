@@ -70,7 +70,7 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-        
+
         /// <summary>
         /// When clicked, make a cricle using the following 
         /// <para> equation: l * b </para>
@@ -89,7 +89,7 @@ namespace lommeregner2._0
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
                     Height = int.Parse(text[0]),
-                    Width = int.Parse(text[0])
+                    Width = int.Parse(text[1])
 
                 };
 
@@ -101,7 +101,7 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-       
+
         /// <summary>
         /// When clicked, make a cricle using the following 
         /// <para> equation: (a + c) * h * 0.5  </para>
@@ -137,7 +137,7 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-        
+
         /// <summary>
         /// When clicked, make a cricle using the following 
         /// <para> equation: h * r * r * 3.14 / 3  </para>
@@ -154,19 +154,21 @@ namespace lommeregner2._0
         /// </summary>
         private void CE_Click(object sender, RoutedEventArgs e)
         {
+            Can.Children.Clear();
             Window.Text = "";
             LastQuery.Text = "";
         }
-       
+
         /// <summary>
         /// When clicked, Clear Equation
         /// </summary>
         private void C_Click(object sender, RoutedEventArgs e)
         {
+            Can.Children.Clear();
             Window.Text = "";
             LastQuery.Text = "";
         }
-       
+
         /// <summary>
         /// When clicked, remove 1 from length
         /// </summary>
@@ -194,8 +196,9 @@ namespace lommeregner2._0
                 //val a = eval("10 * 20") + <br>; = 200
                 //val b = eval("2 + 2") + <br>; = 4
                 // val c = eval("10 + 17") + <br>; = 27
+                Can.Children.Clear();
                 var input = lang.Eval(Window.Text.ToString());
-                LastQuery.Text = Window.Text;
+                LastQuery.Text = $"{Window.Text} =";
                 Window.Text = $"{input}";
             }
             catch (SystemException)
