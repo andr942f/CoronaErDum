@@ -52,7 +52,7 @@
         <Button x:Name="Equals" Grid.Row="6" Grid.Column="4" Click="Equals_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">=</Button>
         <Button x:Name="Dot" Grid.Row="6" Grid.Column="3" Click="Dot_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">.</Button>
         <Button x:Name="PI" Grid.Row="6" Grid.Column="2" Click="PI_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">PI</Button>
-        <Button x:Name="para" Grid.Row="6" Grid.Column="0" Click="para_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">()</Button>
+        <Button x:Name="para" Grid.Row="6" Grid.Column="0" Click="Para_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">()</Button>
 
         <!-- sercomferance stuff -->
         <Button x:Name="Circle" Grid.Row="2" Grid.Column="4" Content="Circle" VerticalAlignment="Top" Click="Circle_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>

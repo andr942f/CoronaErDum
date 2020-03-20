@@ -10,7 +10,7 @@ namespace lommeregner2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        // Video brugt som referance, har kørt det igennem op til flere gange og har modtaget en forståelse for hvordan det virker: https://www.youtube.com/watch?v=eSrsXt5bP50
+        // Video brugt som udgangspunkt, har kørt det igennem op til flere gange og har modtaget en forståelse for hvordan det virker: https://www.youtube.com/watch?v=eSrsXt5bP50
         public MainWindow()
         {
             InitializeComponent();
@@ -30,19 +30,22 @@ namespace lommeregner2._0
 
         #endregion
 
+        // When clicked, add one of the following (depending on what is clicked) add to textbox
         #region Operator chooser
         private void Plus_Click(object sender, RoutedEventArgs e) => Window.Text += "+";
         private void Minus_Click(object sender, RoutedEventArgs e) => Window.Text += "-";
         private void Multiply_Click(object sender, RoutedEventArgs e) => Window.Text += "*";
         private void Divide_Click(object sender, RoutedEventArgs e) => Window.Text += "/";
         private void Dot_Click(object sender, RoutedEventArgs e) => Window.Text += ".";
-        private void para_Click(object sender, RoutedEventArgs e) => Window.Text += "()";
+        private void Para_Click(object sender, RoutedEventArgs e) => Window.Text += "()";
         private void PI_Click(object sender, RoutedEventArgs e) => Window.Text += "3.14";
-
         #endregion
 
         #region circumference
-        // r * r * 3.14
+        /// <summary>
+        /// When clicked, make a cricle using the following 
+        /// <para> equation: r * r * 3.14 </para>
+        /// </summary>
         private void Circle_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -67,7 +70,11 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-        // l * b
+        
+        /// <summary>
+        /// When clicked, make a cricle using the following 
+        /// <para> equation: l * b </para>
+        /// </summary>
         private void Square_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -94,7 +101,12 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-        // (a + c) * h * 0.5 
+       
+        /// <summary>
+        /// When clicked, make a cricle using the following 
+        /// <para> equation: (a + c) * h * 0.5  </para>
+        /// <para> HEADS UP!! THE MATHS ISN'T CORRECT  </para>
+        /// </summary>
         private void Trapezoid_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -125,7 +137,11 @@ namespace lommeregner2._0
                 Window.Text = "Syntax error";
             }
         }
-        // h * r * r * 3.14 / 3
+        
+        /// <summary>
+        /// When clicked, make a cricle using the following 
+        /// <para> equation: h * r * r * 3.14 / 3  </para>
+        /// </summary>
         private void Cone_Click(object sender, RoutedEventArgs e)
         {
 
@@ -133,16 +149,27 @@ namespace lommeregner2._0
         #endregion
 
         #region Remove & clear
+        /// <summary>
+        /// When clicked, Clear Entry 
+        /// </summary>
         private void CE_Click(object sender, RoutedEventArgs e)
         {
             Window.Text = "";
             LastQuery.Text = "";
         }
+       
+        /// <summary>
+        /// When clicked, Clear Equation
+        /// </summary>
         private void C_Click(object sender, RoutedEventArgs e)
         {
             Window.Text = "";
             LastQuery.Text = "";
         }
+       
+        /// <summary>
+        /// When clicked, remove 1 from length
+        /// </summary>
         private void Backspace_Click(object sender, RoutedEventArgs e)
         {
             if (Window.Text != "")
@@ -151,10 +178,8 @@ namespace lommeregner2._0
         #endregion
 
         /// <summary> Equals all numbers together
-        /// <param> When clicked, calculate everything in the text window and write the result in the field above</param>
+        /// <para> When clicked, calculate everything in the text window and write the result in the field above</para>
         /// </summary>
-        /// <param name="sender">Ignore</param>
-        /// <param name="e">Ignore</param>
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
             // Call the "Eval" function from inside javascript using the Guid [0E59F1D5-1FBE-11D0-8FF2-00A0D10038BC]

@@ -462,7 +462,7 @@ namespace lommeregner2._0 {
             this.para = ((System.Windows.Controls.Button)(target));
             
             #line 55 "..\..\MainWindow.xaml"
-            this.para.Click += new System.Windows.RoutedEventHandler(this.para_Click);
+            this.para.Click += new System.Windows.RoutedEventHandler(this.Para_Click);
             
             #line default
             #line hidden
