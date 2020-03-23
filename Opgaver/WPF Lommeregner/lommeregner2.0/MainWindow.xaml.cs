@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -151,12 +152,14 @@ namespace lommeregner2._0
         #region Remove & clear
         /// <summary>
         /// When clicked, Clear Entry 
+        /// <para>Not the best solution, but it works (sort of)</para>
         /// </summary>
         private void CE_Click(object sender, RoutedEventArgs e)
         {
             Can.Children.Clear();
-            Window.Text = "";
-            LastQuery.Text = "";
+            string ce = Window.Text.TrimEnd('*', '/', '+', '-');
+            Window.Text = Window.Text.Remove(Window.Text.LastIndexOf(ce) + 1);
+
         }
 
         /// <summary>
