@@ -106,7 +106,7 @@ namespace lommeregner2._0
         /// <summary>
         /// When clicked, make a cricle using the following 
         /// <para> equation: (a + c) * h * 0.5  </para>
-        /// <para> HEADS UP!! THE MATHS ISN'T CORRECT  </para>
+        /// <para> WIP</para>
         /// </summary>
         private void Trapezoid_Click(object sender, RoutedEventArgs e)
         {
@@ -142,12 +142,45 @@ namespace lommeregner2._0
         /// <summary>
         /// When clicked, make a cricle using the following 
         /// <para> equation: h * r * r * 3.14 / 3  </para>
+        /// <para> WIP  </para>
         /// </summary>
         private void Cone_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Can.Children.Clear();
 
+                string[] text = Window.Text.Split('*', '/');
+                int r = int.Parse(text[1] + text[2]);
+
+                Rectangle rectangle = new Rectangle
+                {
+                    Stroke = Brushes.White,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Bottom,
+                    Height = int.Parse(text[0]),
+                    Width = r
+                };
+
+                Ellipse ellipse = new Ellipse
+                {
+                    Stroke = Brushes.White,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Height = 10,
+                    Width = r
+                };
+
+
+                Can.Children.Add(ellipse);
+                Can.Children.Add(rectangle);
+            }
+            catch
+            {
+                Window.Text = "Syntax error";
+            }
         }
-        #endregion
+        #endregion 
 
         #region Remove & clear
         /// <summary>
@@ -158,7 +191,8 @@ namespace lommeregner2._0
         {
             Can.Children.Clear();
             string ce = Window.Text.TrimEnd('*', '/', '+', '-');
-            Window.Text = Window.Text.Remove(Window.Text.LastIndexOf(ce) + 1);
+            if (Window.Text.Length != 1)
+                Window.Text = Window.Text.Remove(Window.Text.LastIndexOf(ce) + 1);
 
         }
 
