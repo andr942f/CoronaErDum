@@ -138,21 +138,20 @@ namespace lommeregner2._0
             }
 
 
-            /// <summary>
-            /// When clicked, make a cricle using the following 
-            /// <para> equation: r * r * h * 3.14 / 3  </para>
-            /// <para> WIP  </para>
-            /// </summary>
-            private void Cone_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// When clicked, make a cricle using the following 
+        /// <para> equation: h * r * r * 3.14 / 3  </para>
+        /// <para> WIP  </para>
+        /// </summary>
+        private void Cone_Click(object sender, RoutedEventArgs e)
             {
                 try
                 {
                     Can.Children.Clear();
 
                     string[] text = Query.Text.Split('*', '/', ' ');
-                    int r1 = int.Parse(text[0] + text[0]);
-                    int r2 = int.Parse(text[1] + text[1]);
-                    int h = int.Parse(text[2]);
+                    int h = int.Parse(text[0]);
+                    int r = int.Parse(text[1] + text[2]);
 
                     Rectangle rectangle = new Rectangle
                     {
@@ -160,7 +159,7 @@ namespace lommeregner2._0
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Bottom,
                         Height = h,
-                        Width = r1
+                        Width = r
                     };
 
                     Ellipse ellipse = new Ellipse
@@ -169,7 +168,7 @@ namespace lommeregner2._0
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center,
                         Height = 10,
-                        Width = r2
+                        Width = r
                     };
 
 
