@@ -12,7 +12,7 @@ namespace lommeregner2._0
     {
         // Video brugt som udgangspunkt, har kørt det igennem op til flere gange og har modtaget en forståelse for hvordan det virker: https://www.youtube.com/watch?v=eSrsXt5bP50
         public MainWindow() => InitializeComponent();
-        public void Write(string add) => Query.Text += add;
+        public void Write(string add) => Win.Text += add;
        
         #region B0-9
         private void B0_Click(object sender, RoutedEventArgs e) => Write("0");
@@ -49,7 +49,7 @@ namespace lommeregner2._0
                 {
                     Can.Children.Clear();
 
-                    string[] text = Query.Text.Split('*');
+                    string[] text = Win.Text.Split('*');
 
                     Ellipse ellipse = new Ellipse
                     {
@@ -64,7 +64,7 @@ namespace lommeregner2._0
                 }
                 catch
                 {
-                    Query.Text = "Syntax error";
+                    Win.Text = "Syntax error";
                 }
             }
 
@@ -79,7 +79,7 @@ namespace lommeregner2._0
                 {
                     Can.Children.Clear();
 
-                    string[] text = Query.Text.Split('*');
+                    string[] text = Win.Text.Split('*');
 
                     Rectangle rectangle = new Rectangle
                     {
@@ -96,7 +96,7 @@ namespace lommeregner2._0
                 }
                 catch
                 {
-                    Query.Text = "Syntax error";
+                    Win.Text = "Syntax error";
                 }
             }
 
@@ -112,7 +112,7 @@ namespace lommeregner2._0
                 {
                     Can.Children.Clear();
 
-                    string[] text = Query.Text.Split('(', ')', '*', '+');
+                    string[] text = Win.Text.Split('(', ')', '*', '+');
 
 
                     PointCollection points = new PointCollection();
@@ -133,7 +133,7 @@ namespace lommeregner2._0
                 }
                 catch
                 {
-                    Query.Text = "Syntax error";
+                    Win.Text = "Syntax error";
                 }
             }
 
@@ -149,7 +149,7 @@ namespace lommeregner2._0
                 {
                     Can.Children.Clear();
 
-                    string[] text = Query.Text.Split('*', '/', ' ');
+                    string[] text = Win.Text.Split('*', '/', ' ');
                     int r1 = int.Parse(text[0] + text[0]);
                     int r2 = int.Parse(text[1] + text[1]);
                     int h = int.Parse(text[2]);
@@ -178,7 +178,7 @@ namespace lommeregner2._0
                 }
                 catch
                 {
-                    Query.Text = "Syntax error";
+                    Win.Text = "Syntax error";
                 }
             }
         #endregion
@@ -191,9 +191,9 @@ namespace lommeregner2._0
             private void CE_Click(object sender, RoutedEventArgs e)
             {
                 Can.Children.Clear();
-                string ce = Query.Text.TrimEnd('*', '/', '+', '-');
-                if (Query.Text.Length != 1)
-                    Query.Text = Query.Text.Remove(Query.Text.LastIndexOf(ce) + 1);
+                string ce = Win.Text.TrimEnd('*', '/', '+', '-');
+                if (Win.Text.Length != 1)
+                    Win.Text = Win.Text.Remove(Win.Text.LastIndexOf(ce) + 1);
 
             }
 
@@ -204,7 +204,7 @@ namespace lommeregner2._0
             private void C_Click(object sender, RoutedEventArgs e)
             {
                 Can.Children.Clear();
-                Query.Text = "";
+                Win.Text = "";
                 LastQuery.Text = "";
             }
 
@@ -214,8 +214,8 @@ namespace lommeregner2._0
             /// </summary>
             private void Backspace_Click(object sender, RoutedEventArgs e)
             {
-                if (Query.Text != "")
-                    Query.Text = Query.Text.Remove(Query.Text.Length - 1);
+                if (Win.Text != "")
+                    Win.Text = Win.Text.Remove(Win.Text.Length - 1);
             }
         #endregion
        
@@ -237,13 +237,13 @@ namespace lommeregner2._0
                 //val b = eval("2 + 2") + <br>; = 4
                 // val c = eval("10 + 17") + <br>; = 27
                 Can.Children.Clear();
-                var input = lang.Eval(Query.Text.ToString());
-                LastQuery.Text = $"{Query.Text} =";
-                Query.Text = $"{input}";
+                var input = lang.Eval(Win.Text.ToString());
+                LastQuery.Text = $"{Win.Text} =";
+                Win.Text = $"{input}";
             }
             catch (SystemException)
             {
-                Query.Text = "Syntax Error";
+                Win.Text = "Syntax Error";
             }
         }
 

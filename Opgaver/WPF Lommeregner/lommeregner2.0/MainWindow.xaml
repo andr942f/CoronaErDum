@@ -23,17 +23,18 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="38*"/>
         </Grid.RowDefinitions>
 
         <!-- Number Buttons -->
-        <Button x:Name="B0" Grid.Row="6" Grid.Column="1" Click="B0_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">0</Button>
+        <Button x:Name="B0" Grid.Row="6" Grid.Column="1" Click="B0_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Grid.RowSpan="2">0</Button>
         <Button x:Name="B1" Grid.Row="5" Grid.Column="0" Click="B1_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">1</Button>
         <Button x:Name="B2" Grid.Row="5" Grid.Column="1" Click="B2_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">2</Button>
         <Button x:Name="B3" Grid.Row="5" Grid.Column="2" Click="B3_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">3</Button>
@@ -49,13 +50,13 @@
         <Button x:Name="Minus" Grid.Row="4" Grid.Column="3" Click="Minus_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">-</Button>
         <Button x:Name="Multiply" Grid.Row="3" Grid.Column="3" Click="Multiply_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">*</Button>
         <Button x:Name="Divide" Grid.Row="2" Grid.Column="3" Click="Divide_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">/</Button>
-        <Button x:Name="Equals" Grid.Row="6" Grid.Column="4" Click="Equals_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">=</Button>
-        <Button x:Name="Dot" Grid.Row="6" Grid.Column="3" Click="Dot_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">.</Button>
-        <Button x:Name="PI" Grid.Row="6" Grid.Column="2" Click="PI_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">PI</Button>
-        <Button x:Name="para" Grid.Row="6" Grid.Column="0" Click="Para_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919">()</Button>
+        <Button x:Name="Equals" Grid.Row="6" Grid.Column="4" Click="Equals_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Grid.RowSpan="2">=</Button>
+        <Button x:Name="Dot" Grid.Row="6" Grid.Column="3" Click="Dot_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Grid.RowSpan="2">.</Button>
+        <Button x:Name="PI" Grid.Row="6" Grid.Column="2" Click="PI_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Grid.RowSpan="2">PI</Button>
+        <Button x:Name="para" Grid.Row="6" Grid.Column="0" Click="Para_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Grid.RowSpan="2">()</Button>
 
         <!-- sercomferance stuff -->
-        <Button x:Name="Circle" Grid.Row="2" Grid.Column="4" Content="Circle" VerticalAlignment="Top" Click="Circle_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
+        <Button x:Name="Circle" Grid.Row="2" Grid.Column="4" Content="Circle" VerticalAlignment="Top" Click="Circle_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58" Grid.RowSpan="2"/>
         <Button x:Name="Square" Grid.Row="3" Grid.Column="4" Content="Square" Click="Square_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
         <Button x:Name="Trapezoid" Grid.Row="4" Grid.Column="4" Content="Trapezoid" Click="Trapezoid_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
         <Button x:Name="Cone" Grid.Row="5" Grid.Column="4" Content="Cone" Click="Cone_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
@@ -66,8 +67,8 @@
         <Button x:Name="Backspace" Grid.Row="2" Grid.Column="0" Content="&lt;=" Click="Backspace_Click" Foreground="White" Background="#FF191919" BorderBrush="#FF191919"/>
 
         <!-- textbox -->
-        <TextBox x:Name="Window" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" Grid.Row="1" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
-        <TextBox x:Name="LastQuery" TextAlignment="Right" IsReadOnly="True" VerticalAlignment="Bottom" FontSize="20" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58"/>
+        <TextBox x:Name="Query" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="40" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58" Grid.RowSpan="2"/>
+        <TextBox x:Name="LastQuery" TextAlignment="Right" IsReadOnly="True" VerticalAlignment="Bottom" FontSize="20" Grid.Row="0" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="5" Foreground="White" Background="#FF191919" BorderBrush="#FF191919" Height="58" Margin="0,-3,0,0"/>
 
         <Canvas x:Name="Can" Grid.Column="5"/>
 
