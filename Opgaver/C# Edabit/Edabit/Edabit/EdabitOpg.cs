@@ -35,6 +35,7 @@ namespace Opgaver
                     Console.Write($"CumulativeSum: {before} - {after}");
                 Console.WriteLine();
             }
+            Console.WriteLine($"Largest Swap: {Desc.LargestSwap(25)}");
 
             Console.WriteLine();
         }

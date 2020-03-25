@@ -46,11 +46,11 @@ namespace Opgaver
         /// <para>Create a function that takes an array of numbers and returns an array where each number is the sum of itself + all previous numbers in the array.</para>
         /// </summary>
         public double sum = 0;
-        public double[] CumulativeSum(double[] arr) => arr.Select(i => {sum += i ; return sum;}).ToArray();
+        public double[] CumulativeSum(double[] arr) => arr.Select(i => { sum += i; return sum; }).ToArray();
         /// <summary> Largest Swap
         /// <para>Create a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.</para>
         /// </summary>
-
+        public bool LargestSwap(int num) => (num / 10) >= num % 10;
     }
 }
 
