@@ -9,3 +9,14 @@ C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Edabit\obj\Debug\netcoreap
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Edabit\obj\Debug\netcoreapp3.1\Opgaver.AssemblyInfo.cs
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Edabit\obj\Debug\netcoreapp3.1\Opgaver.dll
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Edabit\obj\Debug\netcoreapp3.1\Opgaver.pdb
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.exe
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.deps.json
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.runtimeconfig.json
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.runtimeconfig.dev.json
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.dll
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\bin\Debug\netcoreapp3.1\Opgaver.pdb
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\obj\Debug\netcoreapp3.1\Opgaver.csprojAssemblyReference.cache
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\obj\Debug\netcoreapp3.1\Opgaver.AssemblyInfoInputs.cache
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\obj\Debug\netcoreapp3.1\Opgaver.AssemblyInfo.cs
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\obj\Debug\netcoreapp3.1\Opgaver.dll
+C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\C# Edabit\Edabit\obj\Debug\netcoreapp3.1\Opgaver.pdb

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -37,6 +35,22 @@ namespace Opgaver
         /// <para>Create a function that takes an array of strings and returns the words that are exactly four letters.</para>
         /// </summary>
         public string[] IsFourLetters(string[] arr) => arr.Where(length => length.Length == 4).ToArray();
+        /// <summary> Valid Zip Code
+        /// <para>Zip codes consist of 5 consecutive digits. Given a string, write a function to determine whether the input is a valid zip code. A valid zip code is as follows:</para>
+        /// <para>* Must only contain numbers (no non-digits allowed).</para>
+        /// <para>* Must not contain any spaces.</para>
+        /// <para>* Must not be greater than 5 digits in length.</para>
+        /// </summary>
+        public bool IsValid(string zip) => (Int32.TryParse(zip, out int result) && zip.Length == 5);
+        /// <summary> Cumulative Array Sum
+        /// <para>Create a function that takes an array of numbers and returns an array where each number is the sum of itself + all previous numbers in the array.</para>
+        /// </summary>
+        public double sum = 0;
+        public double[] CumulativeSum(double[] arr) => arr.Select(i => {sum += i ; return sum;}).ToArray();
+        /// <summary> Largest Swap
+        /// <para>Create a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.</para>
+        /// </summary>
+
     }
 }
 
