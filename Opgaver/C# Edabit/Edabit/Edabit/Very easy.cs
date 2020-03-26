@@ -13,12 +13,7 @@ namespace Opgaver
         /// <summary> Check if the Same Case
         /// <para>Create a function that returns 'true' if an input string contains only uppercase or only lowercase letters.</para>
         /// </summary>
-        public bool SameCase(string str)
-        {
-            if (str == str.ToLower() || str == str.ToUpper())
-                return true;
-            else return false;
-        }
+        public bool SameCase(string str) => str == str.ToUpper() || str == str.ToLower() ? true : false;
         /// <summary> Letters Only
         /// <para>Write a function that removes any non-letters from a string, returning a well-known film title.</para>
         /// </summary>
@@ -51,6 +46,41 @@ namespace Opgaver
         /// <para>Create a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.</para>
         /// </summary>
         public bool LargestSwap(int num) => (num / 10) >= num % 10;
+        /// <summary> Repeating Letters N Times
+        /// <para>Create a function that repeats each character in a string n times.</para>
+        /// </summary>
+        public string Repeat(string str, int num)
+        {
+            string empty = string.Empty;
+            for (int x = 0; x < num; x++)
+                 empty += new string(str[x], num);
+            return empty;
+        }
+        /// <summary> Equality of 3 Values
+        /// <para>Create a function that takes three integer arguments (a, b, c) and returns the number of equal values.</para>
+        /// </summary>
+        public int Equal(int a, int b, int c) => (a==b && b==c) ? 3 : (a!=b && b!= c && a!=c) ? 0 : 2;
+        /// <summary> Remove Every Vowel from a String
+        /// <para>Create a function that takes a string and returns a new string with all vowels removed.</para>
+        /// <para>!Unlocked through solutions!</para>
+        /// </summary>
+        public string RemoveVowels(string str) => new Regex(@"[aeiouAEIOU]").Replace(str, "");
+        /// <summary> Find the Largest Numbers in a Group of Arrays
+        /// <para>Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.</para>
+        /// </summary>
+        public double[] FindLargest(double[][] values) => values.Select(v => v.Max()).ToArray();
+        /// <summary> Retrieve the Subreddit
+        /// <para>Create a function to extract the name of the subreddit from its URL.</para>
+        /// </summary>
+        public string SubReddit(string link) => link.Replace("https://www.reddit.com/r/", "").Trim('/');
+        /// <summary> Return the Index of All Capital Letters
+        /// <para>Create a function that takes a single string as argument and returns an ordered array containing the indices of all capital letters in the string.</para>
+        /// </summary>
+        public int[] IndexOfCapitals(string str) => str.Select((x, y) => y).Where(z => char.IsUpper(str[z])).ToArray();
+        /// <summary> Reverse the Case
+        /// <para>Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.</para>
+        /// </summary>
+        public string ReverseCase(string str) => new string(str.Select(x => char.IsLetter(x) ? (char.IsUpper(x) ? char.ToLower(x) : char.ToUpper(x)) : x).ToArray());
     }
 }
 
