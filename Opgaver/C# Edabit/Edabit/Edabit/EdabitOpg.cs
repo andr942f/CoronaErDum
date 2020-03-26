@@ -75,6 +75,8 @@ namespace Opgaver
 
             Console.WriteLine($"reverse case: {Desc.ReverseCase("What")}");
 
+            Console.WriteLine($"is isogram: {Desc.IsIsogram("Yeeters")}");
+
             //end
             Console.WriteLine();
         }

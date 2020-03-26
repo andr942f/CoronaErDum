@@ -81,6 +81,24 @@ namespace Opgaver
         /// <para>Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.</para>
         /// </summary>
         public string ReverseCase(string str) => new string(str.Select(x => char.IsLetter(x) ? (char.IsUpper(x) ? char.ToLower(x) : char.ToUpper(x)) : x).ToArray());
+        /// <summary> Is the Word an Isogram?
+        /// <para>An isogram is a word that has no repeating letters, consecutive or nonconsecutive. Create a function that takes a string and returns either true or false depending on whether or not it's an "isogram".</para>
+        /// </summary>
+        public bool IsIsogram(string str)
+        {
+            str = str.ToLower();
+            int len = str.Length;
+
+            char[] arr = str.ToCharArray();
+
+            Array.Sort(arr);
+            for (int i = 0; i < len - 1; i++)
+            {
+                if (arr[i] == arr[i + 1])
+                    return false;
+            }
+            return true;
+        }
     }
 }
 
