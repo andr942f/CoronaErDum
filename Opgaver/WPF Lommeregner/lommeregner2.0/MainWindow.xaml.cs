@@ -138,48 +138,48 @@ namespace lommeregner2._0
             }
 
 
-        /// <summary>
-        /// When clicked, make a cricle using the following 
-        /// <para> equation: h * r * r * 3.14 / 3  </para>
-        /// <para> WIP  </para>
-        /// </summary>
-        private void Cone_Click(object sender, RoutedEventArgs e)
-            {
-                try
+            /// <summary>
+            /// When clicked, make a cricle using the following 
+            /// <para> equation: h * r * r * 3.14 / 3  </para>
+            /// <para> WIP  </para>
+            /// </summary>
+            private void Cone_Click(object sender, RoutedEventArgs e)
                 {
-                    Can.Children.Clear();
-
-                    string[] text = Query.Text.Split('*', '/', ' ');
-                    int h = int.Parse(text[0]);
-                    int r = int.Parse(text[1] + text[2]);
-
-                    Rectangle rectangle = new Rectangle
+                    try
                     {
-                        Stroke = Brushes.White,
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        VerticalAlignment = VerticalAlignment.Bottom,
-                        Height = h,
-                        Width = r
-                    };
+                        Can.Children.Clear();
 
-                    Ellipse ellipse = new Ellipse
+                        string[] text = Query.Text.Split('*', '/', ' ');
+                        int h = int.Parse(text[0]);
+                        int r = int.Parse(text[1] + text[2]);
+
+                        Rectangle rectangle = new Rectangle
+                        {
+                            Stroke = Brushes.White,
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            VerticalAlignment = VerticalAlignment.Bottom,
+                            Height = h,
+                            Width = r
+                        };
+
+                        Ellipse ellipse = new Ellipse
+                        {
+                            Stroke = Brushes.White,
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            VerticalAlignment = VerticalAlignment.Center,
+                            Height = 10,
+                            Width = r
+                        };
+
+
+                        Can.Children.Add(ellipse);
+                        Can.Children.Add(rectangle);
+                    }
+                    catch
                     {
-                        Stroke = Brushes.White,
-                        HorizontalAlignment = HorizontalAlignment.Center,
-                        VerticalAlignment = VerticalAlignment.Center,
-                        Height = 10,
-                        Width = r
-                    };
-
-
-                    Can.Children.Add(ellipse);
-                    Can.Children.Add(rectangle);
+                        Query.Text = "Syntax error";
+                    }
                 }
-                catch
-                {
-                    Query.Text = "Syntax error";
-                }
-            }
         #endregion
        
         #region Delete stuff

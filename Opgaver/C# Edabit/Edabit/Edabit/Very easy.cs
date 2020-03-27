@@ -59,7 +59,7 @@ namespace Opgaver
         /// <summary> Equality of 3 Values
         /// <para>Create a function that takes three integer arguments (a, b, c) and returns the number of equal values.</para>
         /// </summary>
-        public int Equal(int a, int b, int c) => (a==b && b==c) ? 3 : (a!=b && b!= c && a!=c) ? 0 : 2;
+        public int Equal(int a, int b, int c) => (a==b && b==c) ? 3 : (a!=b && b!=c && a!=c) ? 0 : 2;
         /// <summary> Remove Every Vowel from a String
         /// <para>Create a function that takes a string and returns a new string with all vowels removed.</para>
         /// <para>!Unlocked through solutions!</para>
@@ -68,7 +68,7 @@ namespace Opgaver
         /// <summary> Find the Largest Numbers in a Group of Arrays
         /// <para>Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.</para>
         /// </summary>
-        public double[] FindLargest(double[][] values) => values.Select(v => v.Max()).ToArray();
+        public double[] FindLargest(double[][] values) => values.Select(num => num.Max()).ToArray();
         /// <summary> Retrieve the Subreddit
         /// <para>Create a function to extract the name of the subreddit from its URL.</para>
         /// </summary>
@@ -80,25 +80,33 @@ namespace Opgaver
         /// <summary> Reverse the Case
         /// <para>Given a string, create a function to reverse the case. All lower-cased letters should be upper-cased, and vice versa.</para>
         /// </summary>
-        public string ReverseCase(string str) => new string(str.Select(x => char.IsLetter(x) ? (char.IsUpper(x) ? char.ToLower(x) : char.ToUpper(x)) : x).ToArray());
+        public string ReverseCase(string str) => new string(str.Select(@char => char.IsLetter(@char) ? (char.IsUpper(@char) ? char.ToLower(@char) : char.ToUpper(@char)) : @char).ToArray());
         /// <summary> Is the Word an Isogram?
         /// <para>An isogram is a word that has no repeating letters, consecutive or nonconsecutive. Create a function that takes a string and returns either true or false depending on whether or not it's an "isogram".</para>
         /// </summary>
         public bool IsIsogram(string str)
         {
-            str = str.ToLower();
-            int len = str.Length;
-
-            char[] arr = str.ToCharArray();
-
-            Array.Sort(arr);
-            for (int i = 0; i < len - 1; i++)
-            {
-                if (arr[i] == arr[i + 1])
-                    return false;
-            }
+            Array.Sort(str.ToLower().ToCharArray());
+            for (int i = 0; i < str.Length - 1; i++)
+                return (str.ToLower().ToCharArray()[i] == str.ToLower().ToCharArray()[i + 1]) ? false : true;
             return true;
         }
+        /// <summary> Check if a String Contains only Identical Characters
+        /// <para>Write a function that returns true if all characters in a string are identical and false otherwise.</para>
+        /// </summary>
+        public bool isIdentical(string str) => str.ToCharArray().Distinct().Count() == 1 ? true : false;
+        /// <summary> Reverse the string
+        /// <para></para>
+        /// </summary>
+        public string Reverse(string str) => string.Concat(str.Reverse());
+        /// <summary> Palindrome num
+        /// <para>return true if the num is the same when reversed</para>
+        /// </summary>
+        public bool IsPalindrome(int num) => num.ToString() == string.Concat(num.ToString().Reverse()) ? true : false;
+        /// <summary> Palindrome str
+        /// <para>return true if the string is the same when reversed</para>
+        /// </summary>
+        public bool CheckPalindrome(string str) => str == string.Concat(str.Reverse()) ? true : false;
     }
 }
 

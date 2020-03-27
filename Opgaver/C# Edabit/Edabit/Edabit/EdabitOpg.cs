@@ -77,6 +77,17 @@ namespace Opgaver
 
             Console.WriteLine($"is isogram: {Desc.IsIsogram("Yeeters")}");
 
+            Console.WriteLine($"is identical: {Desc.isIdentical("aaaaba")}");
+
+            string reverse = "Concat is very helpful, i will remember it big time";
+            Console.WriteLine($"Reverse: {reverse} - {Desc.Reverse(reverse)}");
+
+            int num = 434;
+            Console.WriteLine($"NumPalindrome: {num} - {Desc.IsPalindrome(num)}");
+
+            string str = "mwowowm";
+            Console.WriteLine($"StrPalindrome: {str} - {Desc.CheckPalindrome(str)}");
+
             //end
             Console.WriteLine();
         }
