@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -53,13 +54,13 @@ namespace Opgaver
         {
             string empty = string.Empty;
             for (int x = 0; x < num; x++)
-                 empty += new string(str[x], num);
+                empty += new string(str[x], num);
             return empty;
         }
         /// <summary> Equality of 3 Values
         /// <para>Create a function that takes three integer arguments (a, b, c) and returns the number of equal values.</para>
         /// </summary>
-        public int Equal(int a, int b, int c) => (a==b && b==c) ? 3 : (a!=b && b!=c && a!=c) ? 0 : 2;
+        public int Equal(int a, int b, int c) => (a == b && b == c) ? 3 : (a != b && b != c && a != c) ? 0 : 2;
         /// <summary> Remove Every Vowel from a String
         /// <para>Create a function that takes a string and returns a new string with all vowels removed.</para>
         /// <para>!Unlocked through solutions!</para>
@@ -107,6 +108,16 @@ namespace Opgaver
         /// <para>return true if the string is the same when reversed</para>
         /// </summary>
         public bool CheckPalindrome(string str) => str == string.Concat(str.Reverse()) ? true : false;
+        /// <summary> Vowel Replacer
+        /// <para>Create a function that replaces all the vowels in a string with a specified character.</para>
+        /// </summary>
+        public string ReplaceVowels(string str, string ch) => new Regex(@"[aeiouAEIOU]").Replace(str, ch);
+        /// <summary> Purge and Organize
+        /// <para>Given an array of numbers, write a function that returns an array that...</para>
+        /// <para>Has all duplicate elements removed.</para>
+        /// <para>Is sorted from least value to greatest value.</para>
+        /// </summary>
+        public double[] UniqueSort(double[] arr) => arr.Distinct().OrderBy(str=>str).ToArray();
     }
 }
 

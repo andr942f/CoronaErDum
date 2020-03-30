@@ -88,6 +88,13 @@ namespace Opgaver
             string str = "mwowowm";
             Console.WriteLine($"StrPalindrome: {str} - {Desc.CheckPalindrome(str)}");
 
+            Console.WriteLine($"ReplaceVowles: {Desc.ReplaceVowels("prepareth to square! i shall heave the gorge on thy livings, naughty mushrump!", "*")}");
+
+            Console.Write("UniqueSort: ");
+            foreach (var item in Desc.UniqueSort(new double[] { 7, 2, 2, 2, 4, 5, 1, 7, 6, 3, 5 }))
+                Console.Write($"{item}, ");
+            Console.WriteLine();
+
             //end
             Console.WriteLine();
         }
