@@ -100,12 +100,13 @@ namespace Opgaver
                 Console.Write($"{item}, ");
             Console.WriteLine();
 
+
             string pizzeria = "Pizzeria";
             Console.WriteLine($"GetMiddle: {pizzeria} - {Desc.GetMiddle(pizzeria)}");
 
             string mask = "12345678910";
             Console.WriteLine($"maskify: {mask} - {Desc.Maskify(mask)}");
-
+            
             //end
             Console.WriteLine();
             
