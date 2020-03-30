@@ -13,7 +13,7 @@ namespace Opgaver
 
             //Sum
             Console.WriteLine($"Sum: {Desc.Sum(5, 20)}");
-            
+
             //SameCase
             Console.WriteLine($"SameCase: {Desc.SameCase("Sup guyS?")}");
 
@@ -94,6 +94,17 @@ namespace Opgaver
             foreach (var item in Desc.UniqueSort(new double[] { 7, 2, 2, 2, 4, 5, 1, 7, 6, 3, 5 }))
                 Console.Write($"{item}, ");
             Console.WriteLine();
+
+            Console.Write("ArrayOfMultiples: ");
+            foreach (var item in Desc.ArrayOfMultiples(5, 10))
+                Console.Write($"{item}, ");
+            Console.WriteLine();
+
+            string pizzeria = "Pizzeria";
+            Console.WriteLine($"GetMiddle: {pizzeria} - {Desc.GetMiddle(pizzeria)}");
+
+            string mask = "12345678910";
+            Console.WriteLine($"maskify: {mask} - {Desc.Maskify(mask)}");
 
             //end
             Console.WriteLine();

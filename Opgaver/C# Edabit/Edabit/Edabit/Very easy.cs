@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -118,6 +119,19 @@ namespace Opgaver
         /// <para>Is sorted from least value to greatest value.</para>
         /// </summary>
         public double[] UniqueSort(double[] arr) => arr.Distinct().OrderBy(str=>str).ToArray();
+        /// <summary> Array of Multiples
+        /// <para>Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num up to length.</para>
+        /// </summary>
+        public int[] ArrayOfMultiples(int num, int length) => Enumerable.Range(1, length).Select(start => start * num).ToArray();
+        /// <summary> Return the Middle Character(s) of a String
+        /// <para>Create a function that takes a string and returns the middle character(s). If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.</para>
+        /// </summary>
+        public string GetMiddle(string str) => str.Substring((str.Length - 1) / 2, 2 - (str.Length % 2));
+        /// <summary> Maskify the String
+        /// <para>Usually when you sign up for an account to buy something, your credit card number, phone number or answer to a secret question is partially obscured in some way. Since someone could look over your shoulder, you don't want that shown on your screen. Hence, the website masks these strings.</para>
+        /// <para>Your task is to create a function that takes a string, transforms all but the last four characters into "#" and returns the new masked string.</para>
+        /// </summary>
+        public string Maskify(string str) => (str.Length < 5) ? str : $"{new string('#', str.Length)}{str.Substring(str.Length - 4).Replace(str, "#")}";
     }
 }
 
