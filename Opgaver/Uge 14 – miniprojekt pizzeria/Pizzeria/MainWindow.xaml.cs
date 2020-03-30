@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
 namespace Pizzeria
 {
@@ -9,33 +7,32 @@ namespace Pizzeria
     /// </summary>
     public partial class MainWindow : Window
     {
-        Font e = new Font("Ariel", 55);
-        public MainWindow()
-        {
-            InitializeComponent();
-            double[] standard = { 65.00, 80.00, 125.00, 215.00 };
-            Pizza1.Text = Descriptor("Napoli", "Med løg, kylling, dressing og chili", standard);
-            Pizza2.Text = Descriptor("Palermo", "Med kebab, løg, dressing og chili", standard);
-            Pizza3.Text = Descriptor("Catania", "Med skinke og champignon", standard);
-        }
-        public string Descriptor(string navn, string ingredienser, double[] prices) =>
-            $"{navn.ToUpper()}\n" +
-            $"{ingredienser}\n\n" +
+        /// <summary>
+        /// Description and and setup of the menu card
+        /// <para>Made more than two sizes, whoops</para>
+        /// </summary>
+        /// <param name="name">Name of pizza</param>
+        /// <param name="ingredients">List of ingredients</param>
+        /// <param name="prices">Price of pizza</param>
+        /// <returns></returns>
+        public string Descriptor(string name, string ingredients, double[] prices) =>
+            $"{name.ToUpper()}\n" +
+            $"{ingredients}\n\n" +
             $"Alm.: {prices[0]} kr.\n" +
             $"Deep pan: {prices[1]} kr.\n" +
             $"Fam.: {prices[2]} kr.\n" +
             $"Mega: {prices[3]} kr.";
-        private void Pizza1_TextChanged(object sender, TextChangedEventArgs e)
+        public MainWindow()
         {
+            InitializeComponent();
+            //Standard prices for pizzas (different pizza types have different prices, i did this so i could take into account if the program should be expanded)
+            double[] standard = { 65.00, 80.00, 125.00, 215.00 };
 
-        }
-        private void Pizza2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-        private void Pizza3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            #region pizza descriptions
+            Pizza1.Text = Descriptor("Napoli", "Med løg, kylling, dressing og chili", standard);
+            Pizza2.Text = Descriptor("Palermo", "Med kebab, løg, dressing og chili", standard);
+            Pizza3.Text = Descriptor("Catania", "Med skinke og champignon", standard);
+            #endregion
         }
     }
 }
