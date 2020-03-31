@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Opgaver
@@ -132,6 +133,19 @@ namespace Opgaver
         /// <para>Your task is to create a function that takes a string, transforms all but the last four characters into "#" and returns the new masked string.</para>
         /// </summary>
         public string Maskify(string str) => (str.Length < 5) ? str : $"{new string('#', str.Length)}{str.Substring(str.Length - 4).Replace(str, "#")}";
+        /// <summary> Count Ones in Binary Representation of Integer
+        /// <para>Count the amount of ones in the binary representation of an integer. So for example, since 12 is '1100' in binary, the return value should be 2.</para>
+        /// </summary>
+        public int CountOnes(int i)
+        {
+            int count = 0;
+            while (i > 0) {count += i & 1; i >>= 1;}
+            return count;
+        }
+        /// <summary> Return the Highest and Lowest Numbers
+        /// <para>Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).</para>
+        /// </summary>
+        public string HighLow(string str) => $"{str.Split(' ').Select(x => int.Parse(x)).Max()} {str.Split(' ').Select(y => int.Parse(y)).Min()}";
     }
 }
 

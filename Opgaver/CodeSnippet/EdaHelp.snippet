@@ -10,9 +10,13 @@
   <Snippet>
   <Code Language="CSharp">
     <![CDATA[$type$ $name$ = $input$; 
-                  Console.WriteLine($\"$Method($name$)$ : {$name$} - {Desc. $Method($name$)$\");]]>
+                  $Console.WriteLine$($$"$Method$: {$name$} - {Desc.$Method$($name$)}");]]>
           </Code>
           <Declarations>
+            <Literal>
+              <ID>Console.WriteLine</ID>
+              <Default>Console.WriteLine</Default>
+            </Literal>
             <Literal>
               <ID>type</ID>
               <ToolTip>type of variable</ToolTip>
@@ -29,9 +33,9 @@
               <Default>"Hi i'm a string"</Default>
             </Literal>
             <Literal>
-            <ID>Method($name$)</ID>
+            <ID>Method</ID>
               <ToolTip>method being shown</ToolTip>
-              <Default>"Method(name)"</Default>
+              <Default>Method</Default>
             </Literal>
             </Declarations>
         </Snippet>

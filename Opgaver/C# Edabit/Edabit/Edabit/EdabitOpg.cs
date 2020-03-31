@@ -6,35 +6,42 @@ namespace Opgaver
     {
         public void Edabit()
         {
-            //Console.WriteLine($": {Desc.}");
+            Action<string> cw = Console.WriteLine;
 
             //opg connecter
             Very_easy Desc = new Very_easy();
 
             //Sum
-            Console.WriteLine($"Sum: {Desc.Sum(5, 20)}");
+            int five = 5;
+            int twenty = 20;
+            cw($"Sum: {five} - {Desc.Sum(five, twenty)}");
 
             //SameCase
-            Console.WriteLine($"SameCase: {Desc.SameCase("Sup guyS?")}");
+            string guy = "Sup guyS";
+            cw($"SameCase: {guy} - {Desc.SameCase(guy)}");
 
             //Letters Only
-            Console.WriteLine($"Letters only: {Desc.LettersOnly("Y¤!#e4#!a¤!#h¤!#t¤#!ha¤4##t¤#4=()/9is¤#42m#¤342e")}");
-
+            string only = "Y¤!#e4#!a¤!#h¤!#t¤#!ha¤4##t¤#4=()/9is¤#42m#¤342e";
+            cw($"LettersOnly: {only} - {Desc.LettersOnly(only)}");
+            
             //missing num
-            Console.WriteLine($"MissingNum: {Desc.MissingNum(new int[] { 1, 2, 3, 4, 6, 7, 8, 9, 10 })}");
+            int[] missing = { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
+            cw($"MissingNum: {missing} - {Desc.MissingNum(missing)}");
 
             //match
-            Console.WriteLine($"Match: {Desc.match("yo", "Yo")}");
+            string yo = "yo";
+            cw($"match: {yo} - {Desc.match(yo, yo.ToUpper())}");
 
             //isfourletters
             foreach (var item in Desc.IsFourLetters(new string[] { "Billy", "Illie", "Bill", "Billie" }))
             {
                 Console.Write($"IsFourLetters: {item}");
-                Console.WriteLine();
+                cw("");
             }
 
             //isvalid
-            Console.WriteLine($"IsValid: {Desc.IsValid("50163")}");
+            string valid = "50163";
+            cw($"IsValid: {valid} - {Desc.IsValid(valid)}");
 
             //cumulativesum
             double[] arr = { 1, 2, 3 };
@@ -42,74 +49,89 @@ namespace Opgaver
             {
                 foreach (var after in Desc.CumulativeSum(new double[] { before }))
                     Console.Write($"CumulativeSum: {before} - {after}");
-                Console.WriteLine();
+                cw("");
             }
 
             //largest swap
-            Console.WriteLine($"Largest Swap: {Desc.LargestSwap(25)}");
+            int LS = 25;
+            cw($"LargestSwap: {LS} - {Desc.LargestSwap(LS)}");
 
             //repeat
-            Console.WriteLine($"Repeat: {Desc.Repeat("What?", 5)}");
+            string re = "Hi i'm a string";
+            cw($"Repeat: {re} - {Desc.Repeat(re, 5)}");
 
             //equal
-            Console.WriteLine($"Equal: {Desc.Equal(5, 5, 5)}");
+            int eq = 5;
+            cw($"Equal: {eq} - {Desc.Equal(eq, eq, eq)}");
 
             //remove vowels
-            Console.WriteLine($"Remove Vowels: {Desc.RemoveVowels("prepareth to square! i shall heave the gorge on thy livings, naughty mushrump!")}");
-
+            string v = "Hi i'm a string";
+            cw($"RemoveVowels: {v} - {Desc.RemoveVowels(v)}");
+           
             //findlargest
             Console.Write("FindLargest: ");
             foreach (var item in Desc.FindLargest(new double[][] { new double[] { 5.23, 5, 2 }, new double[] { 5, 21, 6, 99 }, new double[] { 6, 7, 9, 10 } }))
                 Console.Write($"{item}, ");
-            Console.WriteLine();
+            cw("");
 
             //subreddit
-            Console.WriteLine($"Subreddit: {Desc.SubReddit("https://www.reddit.com/r/mildlyinteresting/")}");
+            string reddit = "https://www.reddit.com/r/mildlyinteresting/";
+            cw($"SubReddit: {reddit} - {Desc.SubReddit(reddit)}");
 
             //index of capitals
             string input = "YoU dOnT kNoW mE";
             Console.Write($"Index Of Capitals: {input} - ");
             foreach (int item in Desc.IndexOfCapitals(input))
                 Console.Write($"{item}, ");
-            Console.WriteLine();
+            cw("");
 
-            Console.WriteLine($"reverse case: {Desc.ReverseCase("What")}");
+            string what = "What";
+            cw($"ReverseCase: {what} - {Desc.ReverseCase(what)}");
 
-            Console.WriteLine($"is isogram: {Desc.IsIsogram("Yeeters")}");
+            string dio = "Yeeters";
+            cw($"IsDiogram: {dio} - {Desc.IsIsogram(dio)}");
 
-            Console.WriteLine($"is identical: {Desc.isIdentical("aaaaba")}");
+            string name = "Hi i'm a string";
+            cw($"isIdentical: {name} - {Desc.isIdentical(name)}");
 
             string reverse = "Concat is very helpful, i will remember it big time";
-            Console.WriteLine($"Reverse: {reverse} - {Desc.Reverse(reverse)}");
+            cw($"Reverse: {reverse} - {Desc.Reverse(reverse)}");
 
             int num = 434;
-            Console.WriteLine($"NumPalindrome: {num} - {Desc.IsPalindrome(num)}");
+            cw($"NumPalindrome: {num} - {Desc.IsPalindrome(num)}");
 
             string str = "mwowowm";
-            Console.WriteLine($"StrPalindrome: {str} - {Desc.CheckPalindrome(str)}");
+            cw($"StrPalindrome: {str} - {Desc.CheckPalindrome(str)}");
 
-            Console.WriteLine($"ReplaceVowles: {Desc.ReplaceVowels("prepareth to square! i shall heave the gorge on thy livings, naughty mushrump!", "*")}");
+            string str2 = "Hi i'm a string";
+            cw($"ReplaceVowels: {str2} - {Desc.ReplaceVowels(str2, "*")}");
 
             Console.Write("UniqueSort: ");
             foreach (var item in Desc.UniqueSort(new double[] { 7, 2, 2, 2, 4, 5, 1, 7, 6, 3, 5 }))
                 Console.Write($"{item}, ");
-            Console.WriteLine();
+            cw("");
 
             Console.Write("ArrayOfMultiples: ");
             foreach (var item in Desc.ArrayOfMultiples(5, 10))
                 Console.Write($"{item}, ");
-            Console.WriteLine();
-
+            cw("");
 
             string pizzeria = "Pizzeria";
-            Console.WriteLine($"GetMiddle: {pizzeria} - {Desc.GetMiddle(pizzeria)}");
+            cw($"GetMiddle: {pizzeria} - {Desc.GetMiddle(pizzeria)}");
 
             string mask = "12345678910";
-            Console.WriteLine($"maskify: {mask} - {Desc.Maskify(mask)}");
-            
+            cw($"maskify: {mask} - {Desc.Maskify(mask)}");
+
+
+            int i = 5;
+            cw($"CountOnes: {i} - {Desc.CountOnes(i)}");
+
+            string high = "1 2 3 4 5 6 7";
+            cw($"HighLow: {high} - {Desc.HighLow(high)}");
+
             //end
-            Console.WriteLine();
-            
+            cw("");
+
         }
     }
 }

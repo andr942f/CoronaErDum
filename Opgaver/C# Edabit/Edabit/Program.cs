@@ -11,7 +11,6 @@ namespace Opgaver
 
             edabitOpg.Edabit();
             lommeregnerOpg.Lommeregner();
-            
         }
     }
 }
