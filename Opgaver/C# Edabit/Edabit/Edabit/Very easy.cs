@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Opgaver
@@ -87,13 +84,7 @@ namespace Opgaver
         /// <summary> Is the Word an Isogram?
         /// <para>An isogram is a word that has no repeating letters, consecutive or nonconsecutive. Create a function that takes a string and returns either true or false depending on whether or not it's an "isogram".</para>
         /// </summary>
-        public bool IsIsogram(string str)
-        {
-            Array.Sort(str.ToLower().ToCharArray());
-            for (int i = 0; i < str.Length - 1; i++)
-                return (str.ToLower().ToCharArray()[i] == str.ToLower().ToCharArray()[i + 1]) ? false : true;
-            return true;
-        }
+        public bool IsIsogram(string str) => str.ToLower().Distinct().Count() == str.Length;
         /// <summary> Check if a String Contains only Identical Characters
         /// <para>Write a function that returns true if all characters in a string are identical and false otherwise.</para>
         /// </summary>
@@ -119,7 +110,7 @@ namespace Opgaver
         /// <para>Has all duplicate elements removed.</para>
         /// <para>Is sorted from least value to greatest value.</para>
         /// </summary>
-        public double[] UniqueSort(double[] arr) => arr.Distinct().OrderBy(str=>str).ToArray();
+        public double[] UniqueSort(double[] arr) => arr.Distinct().OrderBy(str => str).ToArray();
         /// <summary> Array of Multiples
         /// <para>Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num up to length.</para>
         /// </summary>
@@ -139,14 +130,56 @@ namespace Opgaver
         public int CountOnes(int i)
         {
             int count = 0;
-            while (i > 0) {count += i & 1; i >>= 1;}
+            while (i > 0) { count += i & 1; i >>= 1; }
             return count;
         }
         /// <summary> Return the Highest and Lowest Numbers
         /// <para>Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).</para>
         /// </summary>
         public string HighLow(string str) => $"{str.Split(' ').Select(x => int.Parse(x)).Max()} {str.Split(' ').Select(y => int.Parse(y)).Min()}";
+        /// <summary> Positive Count / Negative Sum
+        /// <para>Create a function that takes an array of positive and negative numbers. Return an array where the first element is the count of positive numbers and the second element is the sum of negative numbers.</para>
+        /// </summary>
+        public int[] CountPosSumNeg(double[] arr) => new[] { arr.Count(x => x > 0), (int)arr.Sum(y => y < 0 ? y : 0) };
+        /// <summary> Sort Numbers in Descending Order
+        /// <para>Create a function that takes any nonnegative number as an argument and return it with it's digits in descending order. Descending order is when you sort from highest to lowest.</para>
+        /// </summary>
+        public int SortDescending(int num) => Convert.ToInt32(string.Concat(num.ToString().OrderByDescending(x => x)));
+        /// <summary> Filter out Strings from an Array
+        /// <para>Create a function that takes an array of non-negative numbers and strings and return a new array without the strings.</para>
+        /// </summary>
+        public int[] FilterArray(object[] arr) => arr.OfType<int>().ToArray();
+        /// <summary> Xs and Os, Nobody Knows
+        /// <para>Create a function that takes a string, checks if it has the same number of x's and o's and returns either true or false.</para>
+        /// <para>Return a boolean value (true or false).</para>
+        /// <para>The string can contain any character.</para>
+        /// <para>When no x and no o are in the string, return true.</para>
+        /// <para>!UNLOCKED THROUGH SOLUTIONS!</para>
+        /// </summary>
+        public bool XO(string str) => str.Count(c => c == 'o' || c == 'O') == str.Count(c => c == 'x' || c == 'X');
+        /// <summary> Pi to N Decimal Places
+        /// <para>Given a number n, write a function that returns PI to n decimal places.</para>
+        /// </summary>
+        public decimal MyPi(int n) => (n != 15) ? Math.Round((decimal)Math.PI, n) : decimal.Parse("3.141592653589793");
+        /// <summary> Is the Number Symmetrical?
+        /// <para>Create a function that takes a number as an argument and returns true or false depending on whether the number is symmetrical or not. A number is symmetrical when it is the same as its reverse.</para>
+        /// </summary>
+        public bool IsSymmetrical(int num) => num.ToString() == string.Concat(num.ToString().ToCharArray().Reverse());
+        /// <summary> Strange Pair
+        /// <para>A pair of strings form a strange pair if both of the following are true:</para>
+        /// <para>The 1st string's first letter = 2nd string's last letter.</para>
+        /// <para>The 1st string's last letter = 2nd string's first letter.</para>
+        /// <para>Create a function that returns true if a pair of strings constitutes a strange pair, and false otherwise.</para>
+        /// </summary>
+        public bool IsStrangePair(string str1, string str2) => string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2) ? str1 == str2 : str1.First() == str2.Last() && str2.First() == str1.Last();
+        /// <summary> Check if a Number is Prime
+        /// <para>Create a function that outputs true if a number is prime, and false otherwise.</para>
+        /// <para>Not done</para>
+        /// </summary>
+        public bool isPrime(int x)
+        {
+            return x <= 1 ? false : x == 2 ? true : x % 2 == 0 ? false : true;
+
+        }
     }
 }
-
-

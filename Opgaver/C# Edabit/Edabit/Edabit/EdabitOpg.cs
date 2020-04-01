@@ -4,9 +4,9 @@ namespace Opgaver
 {
     class EdabitOpg
     {
+        public Action<string> cw = Console.WriteLine;
         public void Edabit()
         {
-            Action<string> cw = Console.WriteLine;
 
             //opg connecter
             Very_easy Desc = new Very_easy();
@@ -88,8 +88,8 @@ namespace Opgaver
             string what = "What";
             cw($"ReverseCase: {what} - {Desc.ReverseCase(what)}");
 
-            string dio = "Yeeters";
-            cw($"IsDiogram: {dio} - {Desc.IsIsogram(dio)}");
+            string dio = "Yeters";
+            cw($"IsIsogram: {dio} - {Desc.IsIsogram(dio)}");
 
             string name = "Hi i'm a string";
             cw($"isIdentical: {name} - {Desc.isIdentical(name)}");
@@ -128,6 +128,29 @@ namespace Opgaver
 
             string high = "1 2 3 4 5 6 7";
             cw($"HighLow: {high} - {Desc.HighLow(high)}");
+
+            int b = 121532153;
+            cw($"SortDescending: {b} - {Desc.SortDescending(b)}");
+
+            object[] vs = {1, "a", 3, "t", "ea", 'e', 5};
+            cw($"FilterArray: {vs} - {Desc.FilterArray(vs)}");
+
+            string gg = "Hi i'm a string";
+            cw($"XO: {gg} - {Desc.XO(gg)}");
+
+            int ll = 4;
+            cw($"MyPi: {ll} - {Desc.MyPi(ll)}");
+
+            int sym = 3423;
+            cw($"IsSymmetrical: {sym} - {Desc.IsSymmetrical(sym)}");
+
+
+            string strs = "Radio";
+            cw($"IsStrangePair: {strs} - groups - {Desc.IsStrangePair(strs, "groups")}");
+
+
+            int prime = 18;
+            cw($"isPrime: {prime} - {Desc.isPrime(prime)}");
 
             //end
             cw("");
