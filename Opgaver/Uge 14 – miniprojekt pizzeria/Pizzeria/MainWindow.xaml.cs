@@ -113,6 +113,15 @@ namespace Pizzeria
         private void Fam_Click(object sender, RoutedEventArgs e) => FamCheck.IsChecked ^= true;
 
         private void Mega_Click(object sender, RoutedEventArgs e) => MegaCheck.IsChecked ^= true;
+
+        #endregion
+
+        #region Drinks
+        private void Lille_Click(object sender, RoutedEventArgs e) => Write("Lille Drik, ", 30, 40, 50, 60);
+
+        private void Mellem_Click(object sender, RoutedEventArgs e) => Write("Mellem Drik, ", 40, 50, 60, 70);
+
+        private void Stor_Click(object sender, RoutedEventArgs e) => Write("Stor Drik, ", 50, 60, 70, 80);
         #endregion
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="600" Background="#FF191919" Foreground="White"    MinWidth="600" MinHeight="750"     MaxWidth="500" MaxHeight="750"  Icon="Cornvibe.png">
-    <Grid>
+        Title="MainWindow" Height="700" Width="600" Background="#FF191919" Foreground="White"    MinWidth="600" MinHeight="700"     MaxWidth="500" MaxHeight="700"  Icon="Cornvibe.png">
+    <Grid Height="670" VerticalAlignment="Top" Margin="0,0,0,-1">
         <!-- Columns -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250*"/>
@@ -26,8 +26,8 @@
         <TextBox x:Name="Pizza1" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Top" FontSize="15" BorderThickness="2" Grid.Row="0" Grid.ColumnSpan="1" Grid.RowSpan="2" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="190"/>
         <TextBox x:Name="Pizza2" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Top" FontSize="15" BorderThickness="2" Grid.Row="1" Grid.ColumnSpan="1" Grid.RowSpan="2" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="190"/>
         <TextBox x:Name="Pizza3" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Top" FontSize="15" BorderThickness="2" Grid.Row="2" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="190" Grid.RowSpan="2"/>
-        <TextBox x:Name="LavSelv" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15" BorderThickness="2" Grid.Row="3" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="261" RenderTransformOrigin="0.512,0.699"/>
-        <TextBox x:Name="SizeChoose" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15" BorderThickness="0" Grid.Row="3" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="96" RenderTransformOrigin="0.504,0.668" Margin="3,155,10,10"/>
+        <TextBox x:Name="LavSelv" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15" BorderThickness="2" Grid.Row="3" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="244" RenderTransformOrigin="0.512,0.699"/>
+        <TextBox x:Name="SizeChoose" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Center" FontSize="15" BorderThickness="0" Grid.Row="3" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="95" RenderTransformOrigin="0.504,0.668" Margin="3,131,10,18"/>
         <!-- end -->
 
         <!-- Options-->
@@ -46,17 +46,28 @@
         <Button x:Name="one1" Content="1)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,156,113,0" Height="20" Click="one1_Click" Grid.Column="1"/>
         <Button x:Name="two2" Content="2)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,156,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="two2_Click" Grid.Column="1"/>
         <Button x:Name="three3" Content="3)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,181,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="three3_Click" Grid.Column="1"/>
-        <Button x:Name="Alm" Content="Alm." Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,181,33,0" Height="20" Grid.Column="1" Click="Alm_Click"/>
-        <Button x:Name="DeepPan" Content="Deep pan" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="DeepPan_Click"/>
-        <Button x:Name="Fam" Content="Fam." Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Fam_Click"/>
-        <Button x:Name="Mega" Content="Mega" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,231,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Mega_Click"/>
+        <Button x:Name="Lille" Content="Lille drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,181,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Lille_Click"/>
+        <Button x:Name="Mellem" Content="Mellem drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Mellem_Click"/>
+        <Button x:Name="Stor" Content="Stor drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Stor_Click"/>
         <!-- end-->
 
         <!-- checkbox-->
-        <CheckBox x:Name="MegaCheck" HorizontalAlignment="Left" Height="20" Margin="343,218,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
-        <CheckBox x:Name="AlmCheck" HorizontalAlignment="Left" Height="20" Margin="343,158,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17" RenderTransformOrigin="-0.308,1.75"/>
-        <CheckBox x:Name="FamCheck" HorizontalAlignment="Left" Height="20" Margin="343,198,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
-        <CheckBox x:Name="DeepCheck" HorizontalAlignment="Left" Height="20" Margin="343,178,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="MegaCheck" HorizontalAlignment="Left" Height="20" Margin="343,195,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="AlmCheck" HorizontalAlignment="Left" Height="20" Margin="343,135,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17" RenderTransformOrigin="-0.308,1.75"/>
+        <CheckBox x:Name="FamCheck" HorizontalAlignment="Left" Height="20" Margin="343,175,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="DeepCheck" HorizontalAlignment="Left" Height="20" Margin="343,155,0,0" Foreground="White" Grid.Row="3" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="MegaCheck_CATANIA" HorizontalAlignment="Left" Height="20" Margin="343,122,0,0" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="AlmCheck_CATANIA" HorizontalAlignment="Left" Height="20" Margin="343,62,0,0" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Width="17" RenderTransformOrigin="-0.308,1.75"/>
+        <CheckBox x:Name="FamCheck_CATANIA" HorizontalAlignment="Left" Height="20" Margin="343,102,0,0" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="DeepCheck_CATANIA" HorizontalAlignment="Left" Height="20" Margin="343,82,0,0" Foreground="White" Grid.Row="2" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="MegaCheck_PALERMO" HorizontalAlignment="Left" Height="20" Margin="343,122,0,0" Foreground="White" Grid.Row="1" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="AlmCheck_PALERMO" HorizontalAlignment="Left" Height="20" Margin="343,62,0,0" Foreground="White" Grid.Row="1" VerticalAlignment="Top" Width="17" RenderTransformOrigin="-0.308,1.75"/>
+        <CheckBox x:Name="FamCheck_PALERMO" HorizontalAlignment="Left" Height="20" Margin="343,102,0,0" Foreground="White" Grid.Row="1" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="DeepCheck_PALERMO" HorizontalAlignment="Left" Height="20" Margin="343,82,0,0" Foreground="White" Grid.Row="1" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="MegaCheck_NAPOLI" HorizontalAlignment="Left" Height="20" Margin="343,122,0,0" Foreground="White" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="AlmCheck_NAPOLI" HorizontalAlignment="Left" Height="20" Margin="343,62,0,0" Foreground="White" VerticalAlignment="Top" Width="17" RenderTransformOrigin="-0.308,1.75"/>
+        <CheckBox x:Name="FamCheck_NAPOLI" HorizontalAlignment="Left" Height="20" Margin="343,102,0,0" Foreground="White" VerticalAlignment="Top" Width="17"/>
+        <CheckBox x:Name="DeepCheck_NAPOLI" HorizontalAlignment="Left" Height="20" Margin="343,82,0,0" Foreground="White" VerticalAlignment="Top" Width="17"/>
         <!-- end-->
 
     </Grid>
