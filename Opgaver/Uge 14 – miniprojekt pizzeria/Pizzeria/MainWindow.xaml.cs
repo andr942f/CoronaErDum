@@ -40,7 +40,7 @@ namespace Pizzeria
         }
 
         /// <summary>
-        /// Insert and romove into your self made pizza
+        /// Insert and remove into your self made pizza
         /// </summary>
         /// <param name="item">name of item you want on  your pizza</param>
         /// /// <param name="alm">price for adding X to alm pizza</param>

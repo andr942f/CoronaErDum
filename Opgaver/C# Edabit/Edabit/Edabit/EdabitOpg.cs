@@ -12,25 +12,25 @@ namespace Opgaver
             Very_easy Desc = new Very_easy();
 
             //Sum
-            int five = 5;
-            int twenty = 20;
-            cw($"Sum: {five} - {Desc.Sum(five, twenty)}");
+            int vs1 = 5;
+            int vs2 = 20;
+            cw($"Sum: {vs1} {vs2} - {Desc.Sum(vs1, vs2)}");
 
             //SameCase
-            string guy = "Sup guyS";
-            cw($"SameCase: {guy} - {Desc.SameCase(guy)}");
+            string vs3 = "Sup guyS";
+            cw($"SameCase: {vs3} - {Desc.SameCase(vs3)}");
 
             //Letters Only
-            string only = "Y¤!#e4#!a¤!#h¤!#t¤#!ha¤4##t¤#4=()/9is¤#42m#¤342e";
-            cw($"LettersOnly: {only} - {Desc.LettersOnly(only)}");
+            string vs4 = "Y¤!#e4#!a¤!#h¤!#t¤#!ha¤4##t¤#4=()/9is¤#42m#¤342e";
+            cw($"LettersOnly: {vs4} - {Desc.LettersOnly(vs4)}");
             
             //missing num
-            int[] missing = { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
-            cw($"MissingNum: {missing} - {Desc.MissingNum(missing)}");
+            int[] vs5 = { 1, 2, 3, 4, 6, 7, 8, 9, 10 };
+            cw($"MissingNum: {vs5} - {Desc.MissingNum(vs5)}");
 
             //match
-            string yo = "yo";
-            cw($"match: {yo} - {Desc.match(yo, yo.ToUpper())}");
+            string vs6 = "yo";
+            cw($"match: {vs6} - {Desc.match(vs6, vs6.ToUpper())}");
 
             //isfourletters
             foreach (var item in Desc.IsFourLetters(new string[] { "Billy", "Illie", "Bill", "Billie" }))
@@ -40,12 +40,12 @@ namespace Opgaver
             }
 
             //isvalid
-            string valid = "50163";
-            cw($"IsValid: {valid} - {Desc.IsValid(valid)}");
+            string vs7 = "50163";
+            cw($"IsValid: {vs7} - {Desc.IsValid(vs7)}");
 
             //cumulativesum
-            double[] arr = { 1, 2, 3 };
-            foreach (var before in arr)
+            double[] vs8 = { 1, 2, 3 };
+            foreach (var before in vs8)
             {
                 foreach (var after in Desc.CumulativeSum(new double[] { before }))
                     Console.Write($"CumulativeSum: {before} - {after}");
@@ -53,20 +53,20 @@ namespace Opgaver
             }
 
             //largest swap
-            int LS = 25;
-            cw($"LargestSwap: {LS} - {Desc.LargestSwap(LS)}");
+            int vs9 = 25;
+            cw($"LargestSwap: {vs9} - {Desc.LargestSwap(vs9)}");
 
             //repeat
-            string re = "Hi i'm a string";
-            cw($"Repeat: {re} - {Desc.Repeat(re, 5)}");
+            string vs10 = "Hi i'm a string";
+            cw($"Repeat: {vs10} - {Desc.Repeat(vs10, 5)}");
 
             //equal
-            int eq = 5;
-            cw($"Equal: {eq} - {Desc.Equal(eq, eq, eq)}");
+            int vs11 = 5;
+            cw($"Equal: {vs11} - {Desc.Equal(vs11, vs11, vs11)}");
 
             //remove vowels
-            string v = "Hi i'm a string";
-            cw($"RemoveVowels: {v} - {Desc.RemoveVowels(v)}");
+            string vs12 = "Hi i'm a string";
+            cw($"RemoveVowels: {vs12} - {Desc.RemoveVowels(vs12)}");
            
             //findlargest
             Console.Write("FindLargest: ");
@@ -75,36 +75,36 @@ namespace Opgaver
             cw("");
 
             //subreddit
-            string reddit = "https://www.reddit.com/r/mildlyinteresting/";
-            cw($"SubReddit: {reddit} - {Desc.SubReddit(reddit)}");
+            string vs13 = "https://www.reddit.com/r/mildlyinteresting/";
+            cw($"SubReddit: {vs13} - {Desc.SubReddit(vs13)}");
 
             //index of capitals
-            string input = "YoU dOnT kNoW mE";
-            Console.Write($"Index Of Capitals: {input} - ");
-            foreach (int item in Desc.IndexOfCapitals(input))
+            string vs14 = "YoU dOnT kNoW mE";
+            Console.Write($"Index Of Capitals: {vs14} - ");
+            foreach (int item in Desc.IndexOfCapitals(vs14))
                 Console.Write($"{item}, ");
             cw("");
 
-            string what = "What";
-            cw($"ReverseCase: {what} - {Desc.ReverseCase(what)}");
+            string vs15 = "What";
+            cw($"ReverseCase: {vs15} - {Desc.ReverseCase(vs15)}");
 
-            string dio = "Yeters";
-            cw($"IsIsogram: {dio} - {Desc.IsIsogram(dio)}");
+            string vs16 = "Yeters";
+            cw($"IsIsogram: {vs16} - {Desc.IsIsogram(vs16)}");
 
-            string name = "Hi i'm a string";
-            cw($"isIdentical: {name} - {Desc.isIdentical(name)}");
+            string vs17 = "Hi i'm a string";
+            cw($"isIdentical: {vs17} - {Desc.isIdentical(vs17)}");
 
-            string reverse = "Concat is very helpful, i will remember it big time";
-            cw($"Reverse: {reverse} - {Desc.Reverse(reverse)}");
+            string vs18 = "Concat is very helpful, i will remember it big time";
+            cw($"Reverse: {vs18} - {Desc.Reverse(vs18)}");
 
-            int num = 434;
-            cw($"NumPalindrome: {num} - {Desc.IsPalindrome(num)}");
+            int vs19 = 434;
+            cw($"NumPalindrome: {vs19} - {Desc.IsPalindrome(vs19)}");
 
-            string str = "mwowowm";
-            cw($"StrPalindrome: {str} - {Desc.CheckPalindrome(str)}");
+            string vs20 = "mwowowm";
+            cw($"StrPalindrome: {vs20} - {Desc.CheckPalindrome(vs20)}");
 
-            string str2 = "Hi i'm a string";
-            cw($"ReplaceVowels: {str2} - {Desc.ReplaceVowels(str2, "*")}");
+            string vs21 = "Hi i'm a string";
+            cw($"ReplaceVowels: {vs21} - {Desc.ReplaceVowels(vs21, "*")}");
 
             Console.Write("UniqueSort: ");
             foreach (var item in Desc.UniqueSort(new double[] { 7, 2, 2, 2, 4, 5, 1, 7, 6, 3, 5 }))
@@ -116,41 +116,62 @@ namespace Opgaver
                 Console.Write($"{item}, ");
             cw("");
 
-            string pizzeria = "Pizzeria";
-            cw($"GetMiddle: {pizzeria} - {Desc.GetMiddle(pizzeria)}");
+            string vs22 = "Pizzeria";
+            cw($"GetMiddle: {vs22} - {Desc.GetMiddle(vs22)}");
 
-            string mask = "12345678910";
-            cw($"maskify: {mask} - {Desc.Maskify(mask)}");
+            string vs23 = "12345678910";
+            cw($"maskify: {vs23} - {Desc.Maskify(vs23)}");
 
+            int vs24 = 5;
+            cw($"CountOnes: {vs24} - {Desc.CountOnes(vs24)}");
 
-            int i = 5;
-            cw($"CountOnes: {i} - {Desc.CountOnes(i)}");
+            string bs25 = "1 2 3 4 5 6 7";
+            cw($"HighLow: {bs25} - {Desc.HighLow(bs25)}");
 
-            string high = "1 2 3 4 5 6 7";
-            cw($"HighLow: {high} - {Desc.HighLow(high)}");
+            int vs26 = 121532153;
+            cw($"SortDescending: {vs26} - {Desc.SortDescending(vs26)}");
 
-            int b = 121532153;
-            cw($"SortDescending: {b} - {Desc.SortDescending(b)}");
+            object[] vs27 = {1, "a", 3, "t", "ea", 'e', 5};
+            cw($"FilterArray: {vs27} - {Desc.FilterArray(vs27)}");
 
-            object[] vs = {1, "a", 3, "t", "ea", 'e', 5};
-            cw($"FilterArray: {vs} - {Desc.FilterArray(vs)}");
+            string vs28 = "Hi i'm a string";
+            cw($"XO: {vs28} - {Desc.XO(vs28)}");
 
-            string gg = "Hi i'm a string";
-            cw($"XO: {gg} - {Desc.XO(gg)}");
+            int vs29 = 4;
+            cw($"MyPi: {vs29} - {Desc.MyPi(vs29)}");
 
-            int ll = 4;
-            cw($"MyPi: {ll} - {Desc.MyPi(ll)}");
+            int vs30 = 3423;
+            cw($"IsSymmetrical: {vs30} - {Desc.IsSymmetrical(vs30)}");
 
-            int sym = 3423;
-            cw($"IsSymmetrical: {sym} - {Desc.IsSymmetrical(sym)}");
+            string vs31 = "Radio";
+            cw($"IsStrangePair: {vs31} - groups - {Desc.IsStrangePair(vs31, "groups")}");
 
+            int vs32 = 18000000;
+            cw($"FormatNum: {vs32} - {Desc.FormatNum(vs32)}");
 
-            string strs = "Radio";
-            cw($"IsStrangePair: {strs} - groups - {Desc.IsStrangePair(strs, "groups")}");
+            int[] vs33 = {1, 6, 10, 555 };
+            cw($"Magnitude: {vs33} - {Desc.Magnitude(vs33)}");
 
+            int vs34 = 1500;
+            cw($"Century: {vs34} - {Desc.Century(vs34)}");
 
-            int prime = 18;
-            cw($"isPrime: {prime} - {Desc.isPrime(prime)}");
+            int[] vs35 = {1, 2, 5, 10, 55 };
+            cw($"SumSmallest: {vs35} - {Desc.SumSmallest(vs35)}");
+
+            string vs36 = "Hi##@$i'm**a(str!ing)";
+            cw($"RemoveSpecialCharacters: {vs36} - {Desc.RemoveSpecialCharacters(vs36)}");
+
+            string vs37 = "andreasvbeck@hotmail.com";
+            cw($"ValidateEmail: {vs37} - {Desc.ValidateEmail(vs37)}");
+
+            int vs38 = 152;
+            cw($"MysteryFunc: {vs38} - {Desc.MysteryFunc(vs38)}");
+
+            string vs39 = "abcd";
+            cw($"Accum: {vs39} - {Desc.Accum(vs39)}");
+
+            int vs40 = 2;
+            cw($"isPrime: {vs40} - {Desc.isPrime(vs40)}");
 
             //end
             cw("");

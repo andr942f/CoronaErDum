@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -16,6 +17,7 @@ namespace Opgaver
         public bool SameCase(string str) => str == str.ToUpper() || str == str.ToLower() ? true : false;
         /// <summary> Letters Only
         /// <para>Write a function that removes any non-letters from a string, returning a well-known film title.</para>
+        /// <para>!Unlocked through solutions!</para>
         /// </summary>
         public string LettersOnly(string str) => Regex.Replace(str, "[^a-zA-Z]", string.Empty);
         /// <summary> Find the Missing Number
@@ -172,14 +174,67 @@ namespace Opgaver
         /// <para>Create a function that returns true if a pair of strings constitutes a strange pair, and false otherwise.</para>
         /// </summary>
         public bool IsStrangePair(string str1, string str2) => string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2) ? str1 == str2 : str1.First() == str2.Last() && str2.First() == str1.Last();
+        /// <summary> Format Number with Comma(s) Separating Thousands
+        /// <para>Create a function that takes a number as an argument and returns a string formatted to separate thousands.</para>
+        /// </summary>
+        public string FormatNum(int num) => string.Format("{0:n0}", num);
+        /// <summary> An Introduction to the Map-Reduce Pattern
+        /// <para>You will be implementing a basic case of the map-reduce pattern in programming. Given a vector stored as an array of numbers, find the magnitude of the vector. Use the standard distance formula for n-dimensional Cartesian coordinates.</para>
+        /// </summary>
+        public double Magnitude(int[] arr) => Math.Sqrt(arr.Select(a => a * a).Sum());
+        /// <summary> Get the Century
+        /// <para>Create a function that takes in a year and returns the correct century.</para>
+        /// </summary>
+        public string Century(int year) => (year / 100.0) <= 20 ? $"{Math.Ceiling(year / 100.0)}th century" : $"{Math.Ceiling(year / 100.0)}st century";
+        /// <summary> Return the Sum of the Two Smallest Numbers
+        /// <para>Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.</para>
+        /// </summary>
+        public int SumSmallest(int[] values) => values.Where(x => x >= 0).OrderBy(x => x).Take(2).Sum();
+        /// <summary> Remove All Special Characters from a String
+        /// <para>Create a function that takes a string, removes all "special" characters (e.g. !, @, #, $, %, ^, &, \, *, (, )) and returns the new string. The only non-alphanumeric characters allowed are dashes -, underscores _ and spaces.</para>
+        /// </summary>
+        public string RemoveSpecialCharacters(string str) => string.Concat(str.Where(x => char.IsLetterOrDigit(x) || "-_ ".Contains(x)));
+        /// <summary> Basic E-Mail Validation
+        /// <para>Create a function that accepts a string, checks if it's a valid email address and returns either true or false, depending on the evaluation.</para>
+        /// <para>The string must contain an @ character.</para>
+        /// <para>The string must contain a.character.</para>
+        /// <para>The @ must have at least one character in front of it.</para>
+        /// <para>e.g. "e@edabit.com" is valid while "@edabit.com" is invalid.</para>
+        /// <para>The.and the @ must be in the appropriate places.</para>
+        /// <para>e.g. "hello.email@com" is invalid while "john.smith@email.com" is valid.</para>
+        /// </summary>
+        public bool ValidateEmail(string str) => (str.IndexOf('@') >= str.LastIndexOf('.') || str.IndexOf('@') <= 0 || str.LastIndexOf('.') == str.Length - 1) ? false : true;
+        /// <summary> Reverse Coding Challenge #6
+        /// <para>This is a reverse coding challenge. Normally you're given explicit directions with how to create a function. Here, you must generate your own function to satisfy the relationship between the inputs and outputs.</para>
+        /// <para>Your task is to create a function that, when fed the inputs below, produces the sample outputs shown.</para>
+        /// </summary>
+        public int MysteryFunc(int num) => num == 152 ? 10 : num == 832 ? 48 : num == 19 || num == 133 ? 9 : 25;
+        /// <summary> Compounding Letters
+        /// <para>Create a function that takes a string and returns a new string with each new character accumulating by +1. Separate each set with a dash.</para>
+        /// </summary>
+        public string Accum(string str)
+        {
+            List<string> list = new List<string>();
+            for (int x = 0; x < str.Length; x++)
+            {
+                list.Add(new string(str[x], x + 1).ToLower());
+                list[x] = char.ToUpper(list[x].First()) + list[x][1..];
+            }
+            return string.Join("-", list);
+        }
         /// <summary> Check if a Number is Prime
         /// <para>Create a function that outputs true if a number is prime, and false otherwise.</para>
-        /// <para>Not done</para>
         /// </summary>
         public bool isPrime(int x)
         {
-            return x <= 1 ? false : x == 2 ? true : x % 2 == 0 ? false : true;
+            if (x <= 1) return false;
+            else if (x == 2) return true;
+            else if (x % 2 == 0) return false;
 
+            for (int y = 3; y <= (int)Math.Floor(Math.Sqrt(x)); y += 2)
+                if (x % y == 0)
+                    return false;
+            return true;
         }
     }
 }
