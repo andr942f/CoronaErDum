@@ -27,6 +27,7 @@ namespace Pizzeria
         public MainWindow()
         {
             InitializeComponent();
+            RABAT.Text = "Køb to, få én gratis";
             //Standard prices for pizzas (different pizza types have different prices, i did this so i could take into account if the program should be expanded)
            
             #region pizza descriptions
