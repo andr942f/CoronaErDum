@@ -9,7 +9,7 @@ namespace Opgaver
         {
 
             //opg connecter
-            Very_easy Desc = new Very_easy();
+            Opgaver Desc = new Opgaver();
 
             //Sum
             int vs1 = 5;
@@ -172,6 +172,17 @@ namespace Opgaver
 
             int vs40 = 2;
             cw($"isPrime: {vs40} - {Desc.isPrime(vs40)}");
+
+            string vs41 = "1254";
+            cw($"ValidatePIN: {vs41} - {Desc.ValidatePIN(vs41)}");
+
+            string vs42 = "What???? GAY!!!";
+            cw($"NoYelling: {vs42} - {Desc.NoYelling(vs42)}");
+
+            string vs43 = "#5423a";
+            cw($"IsValidHexCode: {vs43} - {Desc.IsValidHexCode(vs43)}");
+
+            cw($"UTFcode: - {Desc.UTFcode()}");
 
             //end
             cw("");

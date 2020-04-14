@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Text;
 
 namespace Opgaver
 {
-    class Very_easy
+    class Opgaver
     {
         /// <summary> Return the Sum of Two Numbers
         /// <para>Create a function that takes two numbers as arguments and 'return' their sum.</para>
@@ -235,6 +236,46 @@ namespace Opgaver
                 if (x % y == 0)
                     return false;
             return true;
+        }
+        /// <summary> ATM PIN Code Validation
+        /// <para>ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits. Your task is to create a function that takes a string and returns true if the PIN is valid and false if it's not.</para>
+        /// </summary>
+        public bool ValidatePIN(string pin) => (pin.Length == 4 || pin.Length == 6) && pin.All(char.IsDigit);
+        /// <summary> Switcharoo
+        /// <para>Create a function that takes a string and returns a new string with its first and last characters swapped, except under three conditions:</para>
+        /// <para>If the length of the string is less than two, return "Incompatible.".</para>
+        /// <para>If the argument is not a string, return "Incompatible.".</para>
+        /// <para>If the first and last characters are the same, return "Two's a pair.".</para>
+        /// <para>UNLOCKED THROUGH SOLUTIONS.</para>
+        /// </summary>
+        public static string FlipEndChars(object str) =>
+        (str.ToString().Length < 2 || !(str is string)) ? "Incompatible."
+        : (str.ToString().FirstOrDefault() == str.ToString().LastOrDefault()) ? "Two's a pair."
+        : str.ToString()[str.ToString().Length - 1] + str.ToString().Substring(1, str.ToString().Length - 2) + str.ToString()[0];
+        /// <summary> No Yelling
+        /// <para>Create a function that transforms sentences ending with multiple question marks ? or exclamation marks ! into a sentence only ending with one.</para>
+        /// </summary>
+        public string NoYelling(string phrase) => phrase.EndsWith("!") ? phrase.TrimEnd('!') + "!" : phrase.EndsWith("?") ? phrase.TrimEnd('?') + "?" : phrase;
+        /// <summary> Reverse the Order of Words with Five Letters or More
+        /// <para>Write a function that takes a string of one or more words as an argument and returns the same string, but with all five or more letter words reversed. Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.</para>
+        /// </summary>
+        public string Reverse1(string str) => string.Join(" ", str.Split(' ').Select(x => x.Length > 4 ? string.Concat(x.Reverse()) : x));
+        /// <summary> Valid Hex Code
+        /// <para>Create a function that determines whether a string is a valid hex code.</para>
+        /// <para>A hex code must begin with a pound key # and is exactly 6 characters in length. Each character must be a digit from 0-9 or an alphabetic character from A-F. All alphabetic characters may be uppercase or lowercase.</para>
+        /// <para>UNLOCKED THROUGH SOLUTIONS</para>
+        /// </summary>
+        public bool IsValidHexCode(string str) => Regex.Match(str, "^#[0-9a-fA-F]{6}$").Success;
+        /// <summary> UTF-8 BOM Text Encoding
+        /// <para>Before Unicode became standard, text files and string data were encoded in different 8-bit based code pages, each different between Germany, Spain, Italy, Sweden, etc. Nowadays, UTF-8 is the mostly used standard for sending text in network communication and when saving text data to files.</para>
+        /// <para>UTF-8 encoded text files have a prefix that defines that the file is encoded in UTF-8. It is called a BOM (byte order mark). Use the .Net framework to determine the sequence for the UTF-8 BOM.</para>
+        /// <para>!WIP!</para>
+        /// </summary>
+        readonly UTF8Encoding utf = new UTF8Encoding();
+        public byte[] GetUTF8BOM() => new byte[] { 0x00 };
+        public string UTFcode()
+        {
+            return utf.GetString(GetUTF8BOM());
         }
     }
 }
