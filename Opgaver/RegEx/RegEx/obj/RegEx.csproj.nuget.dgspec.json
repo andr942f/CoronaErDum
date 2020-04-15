@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andreas\\source\\repos\\RegEx\\RegEx\\RegEx.csproj": {}
+    "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\RegEx\\RegEx\\RegEx.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andreas\\source\\repos\\RegEx\\RegEx\\RegEx.csproj": {
+    "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\RegEx\\RegEx\\RegEx.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\source\\repos\\RegEx\\RegEx\\RegEx.csproj",
+        "projectUniqueName": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\RegEx\\RegEx\\RegEx.csproj",
         "projectName": "RegEx",
-        "projectPath": "C:\\Users\\Andreas\\source\\repos\\RegEx\\RegEx\\RegEx.csproj",
+        "projectPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\RegEx\\RegEx\\RegEx.csproj",
         "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\source\\repos\\RegEx\\RegEx\\obj\\",
+        "outputPath": "C:\\Users\\Andreas\\Documents\\GitHub\\CoronaErDum\\Opgaver\\RegEx\\RegEx\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
