@@ -176,13 +176,29 @@ namespace Opgaver
             string vs41 = "1254";
             cw($"ValidatePIN: {vs41} - {Desc.ValidatePIN(vs41)}");
 
-            string vs42 = "What???? GAY!!!";
+            string vs42 = "What???? SYNONYM!!!";
             cw($"NoYelling: {vs42} - {Desc.NoYelling(vs42)}");
 
             string vs43 = "#5423a";
             cw($"IsValidHexCode: {vs43} - {Desc.IsValidHexCode(vs43)}");
 
             cw($"UTFcode: - {Desc.UTFcode()}");
+
+            string vs44 = "Billy";
+            string vs45 = "Blily";
+            cw($"IsAnagram: {vs44}/{vs45} - {Desc.IsAnagram(vs44, vs45)}");
+
+            string vs46 = "epic movie title";
+            cw($"MakeTitle: {vs46} - {Desc.MakeTitle(vs46)}");
+
+            string vs47 = "(123)-312-EYES";
+            cw($" TextToNum: {vs47} - {Desc. TextToNum(vs47)}");
+
+            string vs48 = "(123) 456-7890";
+            cw($"IsValidPhoneNumber: {vs48} - {Desc.IsValidPhoneNumber(vs48)}");
+
+            string vs49 = "Hi i'm a string";
+            cw($"IsPalindrome: {vs49} - {Desc.IsPalindrome(vs49)}");
 
             //end
             cw("");

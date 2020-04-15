@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Threading;
 
 namespace Opgaver
 {
@@ -276,6 +277,61 @@ namespace Opgaver
         public string UTFcode()
         {
             return utf.GetString(GetUTF8BOM());
+        }
+        /// <summary> Check for Anagrams
+        /// <para>Create a function that takes two strings and returns either true or false depending on whether they're anagrams or not.</para>
+        /// </summary>
+        public bool IsAnagram(string str1, string str2) => AnaHelp(str1).Equals(AnaHelp(str2))? true : false;
+        public string AnaHelp(string str) => String.Concat(str.ToLower().OrderBy(x => x));
+        /// <summary> Capitalize the First Letter of Each Word
+        /// <para>Create a function that takes a string as an argument and converts the first character of each word to uppercase. Return the newly formatted string.</para>
+        /// </summary>
+        public string MakeTitle(string str) => string.Join(" ", str.Split(' ').Select(x => $"{char.ToUpper(x[0])}{x.Substring(1)}"));
+        /// <summary> Phone Number Word Decoder
+        /// <para>Create a program that converts a phone number with letters to one with only numbers.</para>
+        /// </summary>
+        public string TextToNum(string phone)
+        {
+            phone = Regex.Replace(phone, "[ABC]", "2");
+            phone = Regex.Replace(phone, "[DEF]", "3");
+            phone = Regex.Replace(phone, "[GHI]", "4");
+            phone = Regex.Replace(phone, "[JKL]", "5");
+            phone = Regex.Replace(phone, "[MNO]", "6");
+            phone = Regex.Replace(phone, "[PQRS]", "7");
+            phone = Regex.Replace(phone, "[TUV]", "8");
+            phone = Regex.Replace(phone, "[WXYZ]", "9");
+            return phone;
+        }
+        /// <summary> Is the Phone Number Formatted Correctly?
+        /// <para>Create a program that converts a phone number with letters to one with only numbers.</para>
+        /// </summary>
+        public bool IsValidPhoneNumber(string str)
+        {
+            if (str.Length != 14 || str[0] != '(' || str[4] != ')' || str[5] != ' ' || str[9] != '-') return false;
+           
+            str = str.Replace('(', ' ').Replace(')', ' ').Replace('-', ' ');
+            return str.All(c => Char.IsDigit(c) || Char.IsWhiteSpace(c));
+        }
+        /// <summary> Check if the String is a Palindrome
+        /// <para>A palindrome is a word, phrase, number or other sequence of characters which reads the same backward or forward, such as madam or kayak.</para>
+        /// <para>Write a function that takes a string and determines whether it's a palindrome or not. The function should return a boolean (true or false value).</para>
+        /// Unlocked through solutions
+        /// </summary>
+        public bool IsPalindrome(string str)
+        {
+            string temp = str.ToLower();
+            temp = Regex.Replace(temp, @"[^\p{L}\p{N}]+", "");
+            char[] reverse = temp.ToCharArray();
+            Array.Reverse(reverse);
+
+            return (temp == new string(reverse)) ? true : false;
+        }
+        /// <summary> Wurst Is Better
+        /// <para>Wurst is the best. Create a function that takes a string and replaces every mention of any type of sausage with the German word "Wurst," unless—of course—the sausage is already a type of German "Wurst" (i.e. "Bratwurst", see below), then leave the sausage name unchanged.</para>
+        /// </summary>
+        public static string WurstIsBetter(string str)
+        {
+
         }
     }
 }
