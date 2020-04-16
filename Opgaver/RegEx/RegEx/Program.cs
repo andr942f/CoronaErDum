@@ -3,24 +3,30 @@ using System.Text.RegularExpressions;
 
 namespace RegEx
 {
-    class Program
+    public class Program
     {
         //https://www.youtube.com/watch?v=sa-TUpSx1JA
+        //https://www.youtube.com/watch?v=9178EdR6Pyg
+        //https://www.regextester.com/97589 Used to test RegEx
 
-        static void Main(string[] args)
+        public static string str =
+        /*reg1 */ "Acorn Pcorn pcorn acorn ecor whoops " +
+        /*reg2 */ "Mr. Gman Mrs. Gman Mr Billy Mr bob asc " +
+        /*reg3 */ "andreasvbeck420@hotmail.com ad@hot.dk realg@gmail.dk bruh@gmail.bruh a@e.co" +
+        /*reg4 */ "[stop] puting me in [brackets] please";
+
+        public static void ForLoop(MatchCollection matches)
         {
-            Regex regex1 = new Regex(@"[^aA]\w*");
-            Regex regex2 = new Regex(@"M(r|s|rs)\.?\s[a-zA-Z]\w*");
-            string vs1 = "Acorn Pcorn pcorn acorn ecor whoops";
-            string vs2 = "Mr. Gman Mrs. Gman Mr Billy Mr bob asc";
-            MatchCollection matches1 = regex1.Matches(vs1);
-            MatchCollection matches2 = regex2.Matches(vs2);
-            foreach (Match match in matches1)
-                Console.Write(match);
+            foreach (Match match in matches)
+                Console.Write(match + ", ");
             Console.WriteLine();
-            foreach (Match match1 in matches2)
-                Console.Write(match1 + ", ");
-
+        }
+        public static void Main()
+        {
+            ForLoop(RegEx.reg1.Matches(str));
+            ForLoop(RegEx.reg2.Matches(str));
+            ForLoop(RegEx.reg3.Matches(str));
+            ForLoop(RegEx.reg4.Matches(str));
         }
     }
 }
