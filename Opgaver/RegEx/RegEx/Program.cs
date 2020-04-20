@@ -10,6 +10,8 @@ namespace RegEx
         //https://www.regextester.com/97589 Used to test RegEx
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/summary Been working on this most of 4/17/2020, mostly to understand it, and use it in the future
         //Exersises: https://regexone.com/
+        //My score on intermediate: http://play.inginf.units.it/#/end/1587380068871
+
 
         /// <summary>
         /// A string for all of the various RegEx's
