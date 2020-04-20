@@ -15,7 +15,7 @@ $       - End of a String
 []      - Matches Characters in brackets
 [^ ]    - Matches Characters NOT in brackets
 |       - Either Or
-( )     - Group
+( )     - Group and captures (\w* (\d*)) = ex. Jan 1987, 1987
 
 Quantifiers:
 *       - 0 or More
