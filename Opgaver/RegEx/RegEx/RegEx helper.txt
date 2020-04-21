@@ -16,6 +16,7 @@ $       - End of a String
 [^ ]    - Matches Characters NOT in brackets
 |       - Either Or
 ( )     - Group and captures (\w* (\d*)) = ex. Jan 1987, 1987
+!       - If an exclamation mark (!) occurs as the first character in a regular expression, all magic characters are treated as special characters.
 
 Quantifiers:
 *       - 0 or More

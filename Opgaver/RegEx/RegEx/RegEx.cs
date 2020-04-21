@@ -136,5 +136,20 @@ namespace RegEx
             public static Regex reg30 = new Regex(@"(\w*)://([\w\-\.]*)(:([\d]*))*");
         //end
 
+           
+        /// <summary>
+        /// youtube watch link search
+        /// </summary>
+        public static Regex reg31 = new Regex(@"watch\?v=[\w\W]*");
+        /// <summary>
+        /// youtube full link search
+        /// </summary>
+        public static Regex reg32 = new Regex(@"^(https||http||htt):\/\/w{3}.youtube.com\/watch\?v=[\w\W]*\s");
+        /// <summary>
+        /// if Contains x, don't write
+        /// </summary>
+        public static Regex reg33 = new Regex(@"^((?!bword|fword).)*$]*");
+
+
     }
 }
