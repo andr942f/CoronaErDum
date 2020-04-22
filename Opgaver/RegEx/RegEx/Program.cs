@@ -12,6 +12,7 @@ namespace RegEx
         //Been working on this most of 4/17/2020, mostly to understand it (will look more at this): https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/summary
         //Exersises: https://regexone.com/
         //My score on intermediate difficulty: http://play.inginf.units.it/#/end/1587380068871
+        //Mastering Regular Espressions, O'Reilly (Been reading this a LOT): https://learning.oreilly.com/library/view/mastering-regular-expressions/0596528124/pref00.html
 
         public static Action<string> cwl = Console.WriteLine;
         public static Action<string> cw = Console.Write;

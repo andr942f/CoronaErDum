@@ -140,11 +140,11 @@ namespace RegEx
         /// <summary>
         /// youtube watch link search
         /// </summary>
-        public static Regex reg31 = new Regex(@"watch\?v=[\w\W]*");
+        public static Regex reg31 = new Regex(@"watch\?v=\w*\S+");
         /// <summary>
         /// youtube full link search
         /// </summary>
-        public static Regex reg32 = new Regex(@"^(https||http||htt):\/\/w{3}.youtube.com\/watch\?v=[\w\W]*\s");
+        public static Regex reg32 = new Regex(@"htt(ps||s):\/\/w{3}.youtube.com\/watch\?v=\w*\S+");
         /// <summary>
         /// if Contains x, don't write
         /// </summary>
