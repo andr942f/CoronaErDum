@@ -37,7 +37,7 @@ namespace RegEx
         /// </summary>
         public static Regex reg6 = new Regex(@"^1?$|^(11+?)\1+$");
 
-        //RegexOme opgaver
+        //RegexOne opgaver
             /// <summary>
             /// Lesson 1: An Introduction, and the ABCs
             /// </summary>
