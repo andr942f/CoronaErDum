@@ -49,8 +49,8 @@ namespace Opgaver
             {
                 foreach (var after in Desc.CumulativeSum(new double[] { before }))
                     Console.Write($"CumulativeSum: {before} - {after}");
-                cw("");
             }
+            cw("");
 
             //largest swap
             int vs9 = 25;
@@ -199,6 +199,24 @@ namespace Opgaver
 
             string vs49 = "Hi i'm a string";
             cw($"IsPalindrome: {vs49} - {Desc.IsPalindrome(vs49)}");
+
+            int vs50 = 100;
+            cw($"lessThan100: {vs50} + {vs50} - {Desc.lessThan100(vs50, vs50)}");
+
+            string vs51 = "Kielbasa is better than Wurst";
+            cw($"WurstIsBetter: {vs51} - {Desc.WurstIsBetter(vs51)}");
+
+            string[] vs52 = {"post", "MALONE", "Rapper" };
+            Console.Write("CapMe: ");
+            foreach (var item in Desc.CapMe(vs52))
+                Console.Write($"{item}, ");
+            cw("");
+
+            int vs53 = 5;
+            cw($"dividesEvenly: {vs53} / {vs53} = {vs53 / vs53} - {Desc.dividesEvenly(vs53, vs53)}");
+
+            int vs54 = 55;
+            cw($"Fact: {vs54} - {Desc.Fact(vs54)}");
 
             //end
             cw("");

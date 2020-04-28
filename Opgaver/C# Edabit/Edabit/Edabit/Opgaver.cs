@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Text;
-using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace Opgaver
 {
@@ -281,7 +280,7 @@ namespace Opgaver
         /// <summary> Check for Anagrams
         /// <para>Create a function that takes two strings and returns either true or false depending on whether they're anagrams or not.</para>
         /// </summary>
-        public bool IsAnagram(string str1, string str2) => AnaHelp(str1).Equals(AnaHelp(str2))? true : false;
+        public bool IsAnagram(string str1, string str2) => AnaHelp(str1).Equals(AnaHelp(str2)) ? true : false;
         public string AnaHelp(string str) => String.Concat(str.ToLower().OrderBy(x => x));
         /// <summary> Capitalize the First Letter of Each Word
         /// <para>Create a function that takes a string as an argument and converts the first character of each word to uppercase. Return the newly formatted string.</para>
@@ -308,7 +307,7 @@ namespace Opgaver
         public bool IsValidPhoneNumber(string str)
         {
             if (str.Length != 14 || str[0] != '(' || str[4] != ')' || str[5] != ' ' || str[9] != '-') return false;
-           
+
             str = str.Replace('(', ' ').Replace(')', ' ').Replace('-', ' ');
             return str.All(c => Char.IsDigit(c) || Char.IsWhiteSpace(c));
         }
@@ -326,12 +325,33 @@ namespace Opgaver
 
             return (temp == new string(reverse)) ? true : false;
         }
+        /// <summary> Less than 100
+        /// <para></para>
+        /// </summary>
+        public bool lessThan100(int a, int b) => a + b < 100;
         /// <summary> Wurst Is Better
         /// <para>Wurst is the best. Create a function that takes a string and replaces every mention of any type of sausage with the German word "Wurst," unless—of course—the sausage is already a type of German "Wurst" (i.e. "Bratwurst", see below), then leave the sausage name unchanged.</para>
         /// </summary>
-        public static string WurstIsBetter(string str)
+        public string WurstIsBetter(string str) => Regex.Replace(str, "Kielbasa|Chorizo|Moronga|Salami|Sausage|Andouille|Naem|Merguez|Gurka|Snorkers|Pepperoni", "Wurst".Replace("$", "$$"), RegexOptions.IgnoreCase);
+        /// <summary> Capitalize the Names
+        /// <para>Create a function that takes an array of names and returns an array where only the first letter of each name is capitalized.</para>
+        /// </summary>
+        public string[] CapMe(string[] arr) =>
+        arr.Select(x => string.Concat(x.Substring(0, 1).ToUpper(), x.Substring(1).ToLower())).ToArray();
+        /// <summary> Divides Evenly
+        /// <para>Given two integers, a and b, return true if a can be divided evenly by b. Return false otherwise.</para>
+        /// </summary>
+        public bool dividesEvenly(int a, int b) => a % b == 0;
+        /// <summary> Factorial Number
+        /// <para>Create a Fact method that receives a non-negative integer and returns the factorial of that number.</para>
+        /// </summary>
+        public long Fact(int n)
         {
+            long L = 1;
+            for (int i = 1; i <= n; i++)
+                L *= i;
 
+            return L;
         }
     }
 }
