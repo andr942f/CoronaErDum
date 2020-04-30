@@ -218,6 +218,20 @@ namespace Opgaver
             int vs54 = 55;
             cw($"Fact: {vs54} - {Desc.Fact(vs54)}");
 
+            string vs55 = "59005";
+            cw($"IsValid2: {vs55} - {Desc.IsValid2(vs55)}");
+
+            int vs56 = 10;
+            cw($"reversedBinaryInteger: {vs56} - {Desc.reversedBinaryInteger(vs56)}");
+
+            int vs57 = 123;
+            foreach (var item in Desc.ReverseAndNot(vs57))
+                Console.Write(item);
+            cw("");
+
+            string vs58 = "people who call RegEx useless are smartn't";
+            cw($"TranslateSentence: {vs58} - {Desc.TranslateSentence(vs58)}");
+
             //end
             cw("");
 

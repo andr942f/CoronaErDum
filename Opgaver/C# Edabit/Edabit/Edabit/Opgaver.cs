@@ -353,5 +353,43 @@ namespace Opgaver
 
             return L;
         }
+        /// <summary> Valid Zip Code
+        /// <para>Zip codes consist of 5 consecutive digits. Given a string, write a function to determine whether the input is a valid zip code. A valid zip code is as follows:</para>
+        /// <para>* Must only contain numbers (no non-digits allowed).</para>
+        /// <para>* Must not contain any spaces.</para>
+        /// <para>* Must not be greater than 5 digits in length.</para>
+        /// <para>* ! regex version !</para>
+        /// </summary>
+        public bool IsValid2(string zip) => new Regex(@"^\d{5}$").IsMatch(zip);
+        /// <summary> reverseint
+        /// <para></para>
+        /// </summary>
+        public int reversedBinaryInteger(int num)
+        {
+            string toBinary = Convert.ToString(num, 2);
+            char[] number = toBinary.ToCharArray();
+
+            Array.Reverse(number);
+
+            return Convert.ToInt32(new string(number), 2);
+        }
+        /// <summary> ReverseAndNot
+        /// <para>Write a function that takes an integer i and returns a string with the integer backwards followed by the original integer.</para>
+        /// </summary>
+        public string ReverseAndNot(int i) => $"{String.Concat(i.ToString().Reverse())}{i}";
+        /// <summary> English to Pig Latin Translator
+        /// <para>Write two functions to make an English to pig latin translator. The first function TranslateWord(word) takes a single word and returns that word translated into pig latin. The second function TranslateSentence(sentence) takes an English sentence and returns that sentence translated into pig latin.</para>
+        /// </summary>
+        public string TranslateWord(string word)
+        {
+            int x = word.IndexOfAny(vowels);
+            return (x == -1) ? word 
+                : (x == 0) ? $"{word}yay" 
+                : (char.IsUpper(word[0]) ? char.ToUpper(word[x]) 
+                : char.ToLower(word[x])) + $"{word.Substring(x + 1)}{word.Substring(0, x).ToLower()}ay";
+        }
+        public char[] vowels = { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' };
+        public string TranslateSentence(string sentence) => 
+            Regex.Replace(sentence, @"\w*", x => TranslateWord(x.Value));
     }
 }
