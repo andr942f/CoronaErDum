@@ -391,5 +391,22 @@ namespace Opgaver
         public char[] vowels = { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' };
         public string TranslateSentence(string sentence) => 
             Regex.Replace(sentence, @"\w*", x => TranslateWord(x.Value));
+        /// <summary> Password Validation
+        /// <para>Create a function that validates a password to conform to the following rules:</para>
+        /// <para>* Length between 6 and 24 characters.</para>
+        /// <para>* At least one uppercase letter (A-Z).</para>
+        /// <para>* At least one lowercase letter (a-z).</para>
+        /// <para>* At least one digit (0-9).</para>
+        /// <para>* Maximum of 2 repeated characters: "aa" ok, "aaa" not okay</para>
+        /// <para>* Supported special characters: ! @ # $ % ^ & * ( ) + = _ - { } [ ] : ; " ' ? < > , .</para>
+        /// <para>!!Unlocked through solutions!! Did this part myself however "^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)"</para>
+        /// </summary>
+        public bool ValidatePassword(string password) => Regex.IsMatch(password, @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?!.*(\S)\1)(?!-*è).{6,24}$");
+        /// <summary> Parseltongue
+        /// <para>Hermione has come up with a precise formula for determining whether or not a phrase was ssspoken by a parssseltongue (a reference from the Harry Potter universe; the language of ssserpents and those who can converse with them).</para>
+        /// </summary>
+        public bool IsParselTongue(string sentence) =>
+            sentence.ToLower().Split().Count(x => x.Contains("s") && !x.Contains("ss")) == 0;
+        
     }
 }

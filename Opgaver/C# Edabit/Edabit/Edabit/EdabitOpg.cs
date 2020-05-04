@@ -232,6 +232,12 @@ namespace Opgaver
             string vs58 = "people who call RegEx useless are smartn't";
             cw($"TranslateSentence: {vs58} - {Desc.TranslateSentence(vs58)}");
 
+            string vs59 = "Fhg93@";
+            cw($"ValidatePassword: {vs59} - {Desc.ValidatePassword(vs59)}");
+
+
+            string vs60 = "Hello fellow kidss";
+            cw($"IsParselTongue: {vs60} - {Desc.IsParselTongue(vs60)}");
             //end
             cw("");
 
