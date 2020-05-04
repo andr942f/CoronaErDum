@@ -235,9 +235,18 @@ namespace Opgaver
             string vs59 = "Fhg93@";
             cw($"ValidatePassword: {vs59} - {Desc.ValidatePassword(vs59)}");
 
-
             string vs60 = "Hello fellow kidss";
             cw($"IsParselTongue: {vs60} - {Desc.IsParselTongue(vs60)}");
+
+            string vs61 = "Sos sas sum";
+            cw($"IsSmooth: {vs61} - {Desc.IsSmooth(vs61)}");
+
+            string vs62 = "hhoowwddaarreeyou";
+            cw($"SockPairs: {vs62} - {Desc.SockPairs(vs62)}");
+
+            string vs63 = "a3c1t7";
+            cw($"MysteryFunc: {vs63} - {Desc.MysteryFunc(vs63)}");
+
             //end
             cw("");
 

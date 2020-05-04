@@ -383,13 +383,13 @@ namespace Opgaver
         public string TranslateWord(string word)
         {
             int x = word.IndexOfAny(vowels);
-            return (x == -1) ? word 
-                : (x == 0) ? $"{word}yay" 
-                : (char.IsUpper(word[0]) ? char.ToUpper(word[x]) 
+            return (x == -1) ? word
+                : (x == 0) ? $"{word}yay"
+                : (char.IsUpper(word[0]) ? char.ToUpper(word[x])
                 : char.ToLower(word[x])) + $"{word.Substring(x + 1)}{word.Substring(0, x).ToLower()}ay";
         }
         public char[] vowels = { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' };
-        public string TranslateSentence(string sentence) => 
+        public string TranslateSentence(string sentence) =>
             Regex.Replace(sentence, @"\w*", x => TranslateWord(x.Value));
         /// <summary> Password Validation
         /// <para>Create a function that validates a password to conform to the following rules:</para>
@@ -407,6 +407,42 @@ namespace Opgaver
         /// </summary>
         public bool IsParselTongue(string sentence) =>
             sentence.ToLower().Split().Count(x => x.Contains("s") && !x.Contains("ss")) == 0;
-        
+        /// <summary> Smooth Sentences
+        /// <para>Carlos is a huge fan of something he calls smooth sentences. A smooth sentence is one where the last letter of each word is identical to the first letter the following word.</para>
+        /// <para>To illustrate, the following would be a smooth sentence: "Carlos swam masterfully."</para>
+        /// <para>Since "Carlos" ends with an "s" and swam begins with an "s" and swam ends with an "m" and masterfully begins with an "m".</para>
+        /// </summary>
+        public bool IsSmooth(string sentence) =>
+            Regex.Matches(sentence, @"([a-zA-Z]) (?!\1)", RegexOptions.IgnoreCase).Count == 0;
+        /// <summary>Sock Pairs
+        /// <para>Joseph is in the middle of packing for a vacation. He's having a bit of trouble finding all of his socks, though.</para>
+        /// <para>Write a function that returns the number of sock pairs he has. A sock pair consists of two of the same letter, such as "AA". The socks are represented as an unordered sequence.</para>
+        /// </summary>
+        public  int SockPairs(string socks)
+        {
+            int PairCount = 0;
+            char[] arr = socks.ToCharArray();
+            Array.Sort(arr);
+
+            for (int i = 1; i < arr.Length; i++)
+                if (arr[i] == arr[i - 1])
+                {
+                    PairCount++;
+                    i++;
+                }
+
+            return PairCount;
+        }
+        public string MysteryFunc(string str)
+        {
+            string finalStr = "";
+            for (int x = 0; x < str.Length; x++)
+                if (char.IsNumber(str[x]))
+                {
+                    int parse = int.Parse(str[x].ToString());
+                    finalStr += new string(str[x - 1], parse);
+                }
+            return finalStr;
+        }
     }
 }
