@@ -133,9 +133,9 @@ namespace RegEx
             /// <summary>
             /// Problem 8: Parsing and extracting data from a URL
             /// </summary>
-            public static Regex reg30 = new Regex(@"(\w*)://([\w\-\.]*)(:([\d]*))*");
+            public static Regex reg30 = new Regex( @"(\w*)://([\w\-\.]*)(:([\d]*))*");
         //end
-
+        
            
         /// <summary>
         /// youtube watch link search
