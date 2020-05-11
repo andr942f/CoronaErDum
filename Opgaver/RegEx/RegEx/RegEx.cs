@@ -149,7 +149,5 @@ namespace RegEx
         /// if Contains x, don't write
         /// </summary>
         public static Regex reg33 = new Regex(@"^((?!bword|fword).)*$]*");
-
-
     }
 }
