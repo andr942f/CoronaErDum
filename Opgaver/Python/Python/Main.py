@@ -10,6 +10,7 @@ class Main:
         int += 1
 
 from LibsGame import LibsGame
+from GuessingGame import Guessing_game
 
 
 
