@@ -23,13 +23,13 @@ namespace Pizzeria
             $"Fam.: {prices[2]} kr.\n" +
             $"Mega: {prices[3]} kr.";
         public double[] standard = { 65.00, 80.00, 125.00, 215.00 };
-        public double[] lavSelv= { 0.00, 0.00, 0.00, 0.00 };
+        public double[] lavSelv = { 0.00, 0.00, 0.00, 0.00 };
         public MainWindow()
         {
             InitializeComponent();
             RABAT.Text = "Køb to, få én gratis";
             //Standard prices for pizzas (different pizza types have different prices, i did this so i could take into account if the program should be expanded)
-           
+
             #region pizza descriptions
             Pizza1.Text = Descriptor("1) Napoli", "Med løg, kylling, dressing og chili", standard);
             Pizza2.Text = Descriptor("2) Palermo", "Med kebab, løg, dressing og chili", standard);
@@ -65,7 +65,7 @@ namespace Pizzeria
                 lavSelv[2] += fam;
                 lavSelv[3] += mega;
             }
-            SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Fam.: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
+            SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
             return LavSelv.Text.Contains(item) ? LavSelv.Text = LavSelv.Text.Replace(item, "") : LavSelv.Text += item;
         }
 
@@ -124,5 +124,25 @@ namespace Pizzeria
 
         private void Stor_Click(object sender, RoutedEventArgs e) => Write("Stor Drik, ", 50, 60, 70, 80);
         #endregion
+
+        public string Display(double dis)
+        {
+            payment pay = new payment();
+            pay.Show();
+            return pay.tak.Text += $"Tak for købet! Det bliver: {dis} kr.";
+        }
+
+        public void Pay_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (AlmCheck.IsChecked == true)
+                Display(lavSelv[0]);
+            else if (DeepCheck.IsChecked == true)
+                Display(lavSelv[1]);
+            else if (FamCheck.IsChecked == true)
+                Display(lavSelv[2]);
+            else if (MegaCheck.IsChecked == true)
+                Display(lavSelv[4]);
+        }
     }
 }

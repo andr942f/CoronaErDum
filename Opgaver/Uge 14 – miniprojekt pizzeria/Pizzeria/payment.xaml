@@ -1,0 +1,12 @@
+﻿<Window x:Class="Pizzeria.payment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pizzeria"
+        mc:Ignorable="d"
+        Title="payment" Background="#FF191919" Foreground="White" Height="157.127" Width="509.043">
+    <Grid Margin="0,0,545.6,308">
+        <TextBox x:Name="tak" IsReadOnly="True" AcceptsReturn="True" VerticalAlignment="Center" FontSize="20" BorderThickness="0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Height="120" RenderTransformOrigin="0.504,0.668" Margin="0,3,-498,-123" TextChanged="tak_TextChanged"/>
+    </Grid>
+</Window>

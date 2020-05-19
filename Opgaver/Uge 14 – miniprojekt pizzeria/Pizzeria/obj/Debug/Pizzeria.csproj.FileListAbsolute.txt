@@ -26,3 +26,5 @@ C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzer
 C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.GenerateResource.cache
 C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.exe
 C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.pdb
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\payment.g.cs
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\payment.baml

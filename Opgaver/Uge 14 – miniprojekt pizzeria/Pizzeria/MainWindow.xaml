@@ -43,13 +43,14 @@
         <Button x:Name="Normal" Content="Normal" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,106,33,0" Height="20" Click="Normal_Click" Grid.Column="1"/>
         <Button x:Name="Paprika" Content="Paprika" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,131,113,0" Height="20" Click="Paprika_Click" Grid.Column="1"/>
         <Button x:Name="Pizzakrydder" Content="Pizzakrydder" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,131,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="Pizzakrydder_Click" Grid.Column="1"/>
-        <Button x:Name="Ekstra" Content="Ekstra" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,6,73,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="Ekstra_Click" Grid.Column="1"/>
+        <Button x:Name="Ekstra" Content="Ekstra" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,5.6,112.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="Ekstra_Click" Grid.Column="1"/>
         <Button x:Name="one1" Content="1)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,156,113,0" Height="20" Click="one1_Click" Grid.Column="1"/>
         <Button x:Name="two2" Content="2)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,156,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="two2_Click" Grid.Column="1"/>
         <Button x:Name="three3" Content="3)" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,181,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="three3_Click" Grid.Column="1"/>
         <Button x:Name="Lille" Content="Lille drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,181,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Lille_Click"/>
         <Button x:Name="Mellem" Content="Mellem drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,113,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Mellem_Click"/>
         <Button x:Name="Stor" Content="Stor drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,206,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Stor_Click"/>
+        <Button x:Name="Pay" Content="Betal" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,5.6,32.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Pay_Click"/>
         <!-- end-->
 
         <!-- checkbox-->
