@@ -17,7 +17,7 @@ class Edabit(object):
         return num**exp
 
     def how_many_seconds(hours):
-        return (hours * 60) * 60
+        return hours**60
 
     def find_perimeter(height, width):
         return 2 * (height + width)
@@ -78,3 +78,70 @@ class Edabit(object):
 
     def comp(txt1, txt2):
         return len(txt1) == len(txt2)
+
+    def remainder(x, y):
+        return x % y
+
+    def find_perimeter(height, width):
+        return (height + width) * 2
+
+    def string_int(txt):
+        return int(txt)
+
+    def find_smallest_num(lst):
+        return min(lst)
+
+    def difference(nums):
+        return max(nums) - min(nums)
+
+    def divisible_by_five(n):
+        return str(5) in str(n)
+
+    def difference_max_min(lst):
+        return max(lst) - min(lst)
+
+    def k_to_k(n, k):
+        return k**k == n
+
+    def divisible(num):
+        return str(00) in str(num)
+
+    def divides_evenly(a, b):
+        return isinstance(int(a / b), int)
+
+    def divides_evenly(a, b):
+        return a % b == 0
+
+    def is_empty(s):
+        return s == ""
+
+    def frames(minutes, fps):
+        return minutes * fps * 60
+
+    def hello_name(name):
+        return f"Hello {name}!"
+
+    def eq(evaluate):
+        return eval(evaluate)
+
+    #Fix this code:
+    def get_container(product):
+        matches = {
+	    "Bread" : "bag",
+	    "Milk" : "bottle",
+	    "Beer" : "bottle",
+	    "Eggs" : "carton",
+	    "Cerials" : "box",
+	    "Candy" : "plastic",
+	    "Cheese" : None
+	    }
+        return matches[product]
+
+    def ctoa(char):
+        return ord(char)
+
+    def get_last_item(lst):
+        return lst[-1]
+
+    def is_plural(word):
+        return word.endswith("s")

@@ -26,7 +26,14 @@ print(Edabit.less_than_100(5, 10))
 print(Edabit.less_than_or_equal_to_zero(5))
 print(Edabit.squared(5))
 print(Edabit.tri_area(5, 10))
-print(Edabit.comp("aaa", "aa"))
+print(Edabit.remainder(5, 7))
+print(Edabit.find_perimeter(10, 15))
+print(Edabit.string_int("10"))
+print(Edabit.divides_evenly(10, 5))
+print(Edabit.hello_name("Jeff"))
+print(Edabit.eq("1 + 1"))
+
+
 
 
 print("")
