@@ -17,7 +17,7 @@ class Edabit(object):
         return num**exp
 
     def how_many_seconds(hours):
-        return hours**60
+        return hours ** 60
 
     def find_perimeter(height, width):
         return 2 * (height + width)
@@ -145,3 +145,37 @@ class Edabit(object):
 
     def is_plural(word):
         return word.endswith("s")
+
+    def is_even(n):
+        return n % 2 == 0
+
+    def isEvenOrOdd(num):
+        return "even" if num % 2 == 0 else "odd"
+
+    def has_spaces(txt):
+        return " " in txt
+
+    def min_max(nums):
+        return [min(nums), max(nums)]
+
+    # def programmers(*args):
+    #   return max(args) - min(args)
+
+    def programmers(one, two, three):
+        list = [one, two, three]
+        return max(list) - min(list)
+
+    def stack_boxes(n):
+        return n * n
+
+    def check(lst, el):
+        return el in lst
+
+    def num_to_dashes(num):
+        return "-" * num
+
+    def first_last(lst):
+        return [lst[0], lst[-1]]
+
+    def equation(s):
+        return eval(s)
