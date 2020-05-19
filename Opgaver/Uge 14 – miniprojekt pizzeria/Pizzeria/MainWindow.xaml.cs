@@ -70,7 +70,7 @@ namespace Pizzeria
         }
 
         // if you want extra on your pizza
-        private void Ekstra_Click(object sender, RoutedEventArgs e) => LavSelv.Text += "ekstra ";
+        private void Ekstra_Click(object sender, RoutedEventArgs e) => Write($"Ekstra ", 5, 10, 15, 20);
 
         #region Toppings
         private void Løg_Click(object sender, RoutedEventArgs e) => Write($"løg, ", 10, 20, 30, 40);
