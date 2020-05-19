@@ -179,27 +179,3 @@ class Edabit(object):
 
     def equation(s):
         return eval(s)
-
-    def is_safe_bridge(s):
-        return False if " " in s else True
-
-    def is_last_character_n(word):
-        return word[-1] == "n"
-
-    def long_burp(num):
-        return "Bu" + "r"*num + "p"
-
-    def half_quarter_eighth(n):
-        return [n / 2, n / 4, n / 8]
-
-    def is_empty(dictionary):
-        return len(dictionary) == 0
-
-    def how_many_times(num):
-        return "Ed" + "a"*num + "bit"
-
-    def equal_slices(total, people, each):
-        return people * each <= total
-
-    def count_claps(txt):
-        return txt.count("C", 0, -1)
