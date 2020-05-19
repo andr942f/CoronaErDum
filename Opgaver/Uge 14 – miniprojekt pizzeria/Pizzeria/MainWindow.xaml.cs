@@ -23,13 +23,13 @@ namespace Pizzeria
             $"Fam.: {prices[2]} kr.\n" +
             $"Mega: {prices[3]} kr.";
         public double[] standard = { 65.00, 80.00, 125.00, 215.00 };
-        public double[] lavSelv= { 0.00, 0.00, 0.00, 0.00 };
+        public double[] lavSelv = { 0.00, 0.00, 0.00, 0.00 };
         public MainWindow()
         {
             InitializeComponent();
             RABAT.Text = "Køb to, få én gratis";
             //Standard prices for pizzas (different pizza types have different prices, i did this so i could take into account if the program should be expanded)
-           
+
             #region pizza descriptions
             Pizza1.Text = Descriptor("1) Napoli", "Med løg, kylling, dressing og chili", standard);
             Pizza2.Text = Descriptor("2) Palermo", "Med kebab, løg, dressing og chili", standard);
@@ -51,6 +51,9 @@ namespace Pizzeria
         /// <returns></returns>
         public string Write(string item, double alm, double deep, double fam, double mega)
         {
+            //if (LavSelv.Text.Length >= 50)
+            //    LavSelv.Text += "\n";
+
             if (LavSelv.Text.Contains(item))
             {
                 lavSelv[0] -= alm;
@@ -124,5 +127,10 @@ namespace Pizzeria
 
         private void Stor_Click(object sender, RoutedEventArgs e) => Write("Stor Drik, ", 50, 60, 70, 80);
         #endregion
+
+        private void LavSelv_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

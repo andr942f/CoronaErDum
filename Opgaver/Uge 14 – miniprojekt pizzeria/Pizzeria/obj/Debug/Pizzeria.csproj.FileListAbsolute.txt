@@ -12,3 +12,17 @@ C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Uge 14 – miniprojekt piz
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.GenerateResource.cache
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.exe
 C:\Users\Andreas\Documents\GitHub\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.pdb
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\bin\Debug\Pizzeria.exe.config
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\bin\Debug\Pizzeria.exe
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\bin\Debug\Pizzeria.pdb
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.csprojAssemblyReference.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\MainWindow.g.cs
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\App.g.cs
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria_MarkupCompile.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria_MarkupCompile.lref
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\MainWindow.baml
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.g.resources
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.Properties.Resources.resources
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.GenerateResource.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.exe
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Uge 14 – miniprojekt pizzeria\Pizzeria\obj\Debug\Pizzeria.pdb
