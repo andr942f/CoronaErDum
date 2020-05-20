@@ -2,11 +2,14 @@
 
 namespace Pizzeria
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         /// <summary>
         /// Description and and setup of the menu card
         /// <para>Made more than two sizes, whoops</para>
@@ -36,43 +39,74 @@ namespace Pizzeria
             Pizza3.Text = Descriptor("3) Catania", "Med skinke og champignon", standard);
 
             LavSelv.Text = "4) Lav selv\n".ToUpper() + "Med ";
-            SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Fam.: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
+            SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
             #endregion
         }
 
+        #region Custom pizza UI
         /// <summary>
-        /// Insert and remove into your self made pizza
+        /// The UI os the custom pizza
         /// </summary>
         /// <param name="item">name of item you want on  your pizza</param>
-        /// /// <param name="alm">price for adding X to alm pizza</param>
-        /// /// <param name="deep">price for adding X to deep pizza</param>
-        /// /// <param name="fam">price for adding X to fam pizza</param>
-        /// /// <param name="mega">price for adding X to mega pizza</param>
+        /// <param name="alm">price for adding X to alm pizza</param>
+        /// <param name="deep">price for adding X to deep pizza</param>
+        /// <param name="fam">price for adding X to fam pizza</param>
+        /// <param name="mega">price for adding X to mega pizza</param>
+        /// <para">Click the same button more than once to get ekstra of said item on the pizza</para>
         /// <returns></returns>
         public string Write(string item, double alm, double deep, double fam, double mega)
         {
-            if (LavSelv.Text.Contains(item))
-            {
-                lavSelv[0] -= alm;
-                lavSelv[1] -= deep;
-                lavSelv[2] -= fam;
-                lavSelv[3] -= mega;
-            }
-            else
+            if (!LavSelv.Text.Contains(item) || !LavSelv.Text.Contains($"Ekstra {item}"))
             {
                 lavSelv[0] += alm;
                 lavSelv[1] += deep;
                 lavSelv[2] += fam;
                 lavSelv[3] += mega;
             }
+            else
+            {
+                lavSelv[0] = lavSelv[0] - alm - alm;
+                lavSelv[1] = lavSelv[1] - deep - deep;
+                lavSelv[2] = lavSelv[2] - fam - fam;
+                lavSelv[3] = lavSelv[3] - mega - mega;
+            }
             SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
             return LavSelv.Text.Contains($"Ekstra {item}") ?
                 LavSelv.Text = LavSelv.Text.Replace($"Ekstra {item}", "") : LavSelv.Text.Contains(item) ?
                 LavSelv.Text = LavSelv.Text.Replace(item, $"Ekstra {item}") : LavSelv.Text += item;
         }
+        public void Drink(double alm, double deep, double fam, double mega)
+        {
+            string[] drinks = { "Cola", "Sprite", "Fanta", "Pepsi", "Water" };
+            if (LavSelv.Text.Contains(drinks[0]))
+            {
+                lavSelv[0] += alm;
+                lavSelv[1] += deep;
+                lavSelv[2] += fam;
+                lavSelv[3] += mega;
+            }
+            else if (LavSelv.Text.Contains(drinks[3]))
+            {
+                lavSelv[0] = lavSelv[0] - alm;
+                lavSelv[1] = lavSelv[1] - deep;
+                lavSelv[2] = lavSelv[2] - fam;
+                lavSelv[3] = lavSelv[3] - mega;
+            }
 
-        // if you want extra on your pizza
-        private void Ekstra_Click(object sender, RoutedEventArgs e) => Write($"Ekstra ", 5, 10, 15, 20);
+
+            LavSelv.Text = LavSelv.Text.Contains(drinks[0]) ?
+                LavSelv.Text = LavSelv.Text.Replace(drinks[0], drinks[1]) :
+            LavSelv.Text.Contains(drinks[1]) ?
+                LavSelv.Text = LavSelv.Text.Replace(drinks[1], drinks[2]) :
+            LavSelv.Text.Contains(drinks[2]) ?
+                LavSelv.Text = LavSelv.Text.Replace(drinks[2], drinks[3]) :
+            LavSelv.Text.Contains(drinks[3]) ?
+                LavSelv.Text = LavSelv.Text.Replace(drinks[3], drinks[4]) :
+            LavSelv.Text.Contains(drinks[4]) ?
+                LavSelv.Text = LavSelv.Text.Replace(drinks[4], "") : LavSelv.Text += drinks[0];
+            SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
+        }
+        #endregion
 
         #region Toppings
         private void Løg_Click(object sender, RoutedEventArgs e) => Write($"løg, ", 10, 20, 30, 40);
@@ -120,31 +154,50 @@ namespace Pizzeria
         #endregion
 
         #region Drinks
-        private void Lille_Click(object sender, RoutedEventArgs e) => Write("Lille Drik, ", 30, 40, 50, 60);
+        private void Lille_Click(object sender, RoutedEventArgs e) => Drink(30, 40, 50, 60);
 
-        private void Mellem_Click(object sender, RoutedEventArgs e) => Write("Mellem Drik, ", 40, 50, 60, 70);
+        private void Mellem_Click(object sender, RoutedEventArgs e) => Drink(40, 50, 60, 70);
 
-        private void Stor_Click(object sender, RoutedEventArgs e) => Write("Stor Drik, ", 50, 60, 70, 80);
+        private void Stor_Click(object sender, RoutedEventArgs e) => Drink(50, 60, 70, 800);
         #endregion
 
-        public string Display(double dis)
+        #region Paytime buttons
+        /// <summary>
+        /// A little layout helper for when you have to pay
+        /// </summary>
+        /// <param name="dis">Money amount</param>
+        /// <returns></returns>
+        public string Payhelp(double dis)
         {
             payment pay = new payment();
             pay.Show();
             return pay.tak.Text += $"Tak for købet! Det bliver: {dis} kr.";
         }
 
-        public void Pay_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Basic layout for when you have to pay
+        /// </summary>
+        /// <param name="one">AlmCheck</param>
+        /// <param name="two">DeepCheck</param>
+        /// <param name="three">FamCheck</param>
+        /// <param name="four">Megacheck</param>
+        /// <param name="Amount">Pay amount</param>
+        public void PayIt(bool? one, bool? two, bool? three, bool? four, double[] Amount)
         {
-
-            if (AlmCheck.IsChecked == true)
-                Display(lavSelv[0]);
-            else if (DeepCheck.IsChecked == true)
-                Display(lavSelv[1]);
-            else if (FamCheck.IsChecked == true)
-                Display(lavSelv[2]);
-            else if (MegaCheck.IsChecked == true)
-                Display(lavSelv[4]);
+            if (one == true)
+                Payhelp(Amount[0]);
+            else if (two == true)
+                Payhelp(Amount[1]);
+            else if (three == true)
+                Payhelp(Amount[2]);
+            else if (four == true)
+                Payhelp(Amount[3]);
         }
+
+        public void Pay_Click(object sender, RoutedEventArgs e) => PayIt(AlmCheck.IsChecked, DeepCheck.IsChecked, FamCheck.IsChecked, MegaCheck.IsChecked, lavSelv);
+        private void Pay1_Click(object sender, RoutedEventArgs e) => PayIt(AlmCheck_NAPOLI.IsChecked, DeepCheck_NAPOLI.IsChecked, FamCheck_NAPOLI.IsChecked, MegaCheck_NAPOLI.IsChecked, standard);
+        private void Pay2_Click(object sender, RoutedEventArgs e) => PayIt(AlmCheck_PALERMO.IsChecked, DeepCheck_PALERMO.IsChecked, FamCheck_PALERMO.IsChecked, MegaCheck_PALERMO.IsChecked, standard);
+        private void Pay3_Click(object sender, RoutedEventArgs e) => PayIt(AlmCheck_CATANIA.IsChecked, DeepCheck_CATANIA.IsChecked, FamCheck_CATANIA.IsChecked, MegaCheck_CATANIA.IsChecked, standard);
+        #endregion
     }
 }
