@@ -66,7 +66,9 @@ namespace Pizzeria
                 lavSelv[3] += mega;
             }
             SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
-            return LavSelv.Text.Contains(item) ? LavSelv.Text = LavSelv.Text.Replace(item, "") : LavSelv.Text += item;
+            return LavSelv.Text.Contains($"Ekstra {item}") ?
+                LavSelv.Text = LavSelv.Text.Replace($"Ekstra {item}", "") : LavSelv.Text.Contains(item) ?
+                LavSelv.Text = LavSelv.Text.Replace(item, $"Ekstra {item}") : LavSelv.Text += item;
         }
 
         // if you want extra on your pizza
