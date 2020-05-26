@@ -24,7 +24,7 @@ namespace Pizzeria
             InitializeComponent();
         }
 
-        private void tak_TextChanged(object sender, TextChangedEventArgs e)
+        private void Tak_TextChanged(object sender, TextChangedEventArgs e)
         {
             
         }

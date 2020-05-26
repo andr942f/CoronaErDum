@@ -46,15 +46,14 @@ namespace Pizzeria
         #region Custom pizza UI
         /// <summary>
         /// The UI os the custom pizza
+        /// (Click the same button more than once to get ekstra of said item on the pizza)
         /// </summary>
         /// <param name="item">name of item you want on  your pizza</param>
         /// <param name="alm">price for adding X to alm pizza</param>
         /// <param name="deep">price for adding X to deep pizza</param>
         /// <param name="fam">price for adding X to fam pizza</param>
         /// <param name="mega">price for adding X to mega pizza</param>
-        /// <para">Click the same button more than once to get ekstra of said item on the pizza</para>
-        /// <returns></returns>
-        public string Write(string item, double alm, double deep, double fam, double mega)
+        public string ToppingPick(string item, double alm, double deep, double fam, double mega)
         {
             if (!LavSelv.Text.Contains(item) || !LavSelv.Text.Contains($"Ekstra {item}"))
             {
@@ -75,24 +74,16 @@ namespace Pizzeria
                 LavSelv.Text = LavSelv.Text.Replace($"Ekstra {item}", "") : LavSelv.Text.Contains(item) ?
                 LavSelv.Text = LavSelv.Text.Replace(item, $"Ekstra {item}") : LavSelv.Text += item;
         }
-        public void Drink(double alm, double deep, double fam, double mega)
+        /// <summary>
+        /// price of drinks/sizes
+        /// </summary>
+        /// <param name="alm">Price for a normal catagory drink</param>
+        /// <param name="deep">price of a deep pan catagory drink</param>
+        /// <param name="fam">price of a family catagory drink</param>
+        /// <param name="mega">price of a mega catagory drink</param>
+        public void DrinkPick(double alm, double deep, double fam, double mega)
         {
             string[] drinks = { "Cola", "Sprite", "Fanta", "Pepsi", "Water" };
-            if (LavSelv.Text.Contains(drinks[0]))
-            {
-                lavSelv[0] += alm;
-                lavSelv[1] += deep;
-                lavSelv[2] += fam;
-                lavSelv[3] += mega;
-            }
-            else if (LavSelv.Text.Contains(drinks[3]))
-            {
-                lavSelv[0] = lavSelv[0] - alm;
-                lavSelv[1] = lavSelv[1] - deep;
-                lavSelv[2] = lavSelv[2] - fam;
-                lavSelv[3] = lavSelv[3] - mega;
-            }
-
 
             LavSelv.Text = LavSelv.Text.Contains(drinks[0]) ?
                 LavSelv.Text = LavSelv.Text.Replace(drinks[0], drinks[1]) :
@@ -104,42 +95,59 @@ namespace Pizzeria
                 LavSelv.Text = LavSelv.Text.Replace(drinks[3], drinks[4]) :
             LavSelv.Text.Contains(drinks[4]) ?
                 LavSelv.Text = LavSelv.Text.Replace(drinks[4], "") : LavSelv.Text += drinks[0];
+
+            if (LavSelv.Text.Contains(drinks[0]))
+            {
+                lavSelv[0] += alm;
+                lavSelv[1] += deep;
+                lavSelv[2] += fam;
+                lavSelv[3] += mega;
+            }
+            else if (LavSelv.Text.Contains(drinks[4]))
+            {
+                lavSelv[0] = lavSelv[0] - alm;
+                lavSelv[1] = lavSelv[1] - deep;
+                lavSelv[2] = lavSelv[2] - fam;
+                lavSelv[3] = lavSelv[3] - mega;
+            }
+
+
             SizeChoose.Text = $"Alm.: {lavSelv[0]} kr.\n" + $"Deep pan: {lavSelv[1]} kr.\n" + $"Familie: {lavSelv[2]} kr.\n" + $"Mega: {lavSelv[3]} kr.\n";
         }
         #endregion
 
         #region Toppings
-        private void Løg_Click(object sender, RoutedEventArgs e) => Write($"løg, ", 10, 20, 30, 40);
+        private void Løg_Click(object sender, RoutedEventArgs e) => ToppingPick($"løg, ", 10, 20, 30, 40);
 
-        private void Ananas_Click(object sender, RoutedEventArgs e) => Write("ananas, ", 11, 21, 26, 34);
+        private void Ananas_Click(object sender, RoutedEventArgs e) => ToppingPick("ananas, ", 11, 21, 26, 34);
 
-        private void ChiliPeber_Click(object sender, RoutedEventArgs e) => Write("chili peber, ", 20, 30, 40, 50);
+        private void ChiliPeber_Click(object sender, RoutedEventArgs e) => ToppingPick("chili peber, ", 20, 30, 40, 50);
 
-        private void Oliven_Click(object sender, RoutedEventArgs e) => Write("oliven, ", 5, 10, 15, 20);
+        private void Oliven_Click(object sender, RoutedEventArgs e) => ToppingPick("oliven, ", 5, 10, 15, 20);
 
-        private void Sovs_Click(object sender, RoutedEventArgs e) => Write("sovs, ", 30, 40, 50, 60);
+        private void Sovs_Click(object sender, RoutedEventArgs e) => ToppingPick("sovs, ", 30, 40, 50, 60);
 
-        private void Ost_Click(object sender, RoutedEventArgs e) => Write("ost, ", 30, 40, 50, 60);
+        private void Ost_Click(object sender, RoutedEventArgs e) => ToppingPick("ost, ", 30, 40, 50, 60);
         #endregion
 
         #region Crust and dough
-        private void Indbagt_Click(object sender, RoutedEventArgs e) => Write("indbagt, ", 32, 42, 52, 62);
+        private void Indbagt_Click(object sender, RoutedEventArgs e) => ToppingPick("indbagt, ", 32, 42, 52, 62);
 
-        private void Normal_Click(object sender, RoutedEventArgs e) => Write("normal, ", 30, 40, 50, 60);
+        private void Normal_Click(object sender, RoutedEventArgs e) => ToppingPick("normal, ", 30, 40, 50, 60);
         #endregion
 
         #region ingridents
-        private void Paprika_Click(object sender, RoutedEventArgs e) => Write("paprika, ", 4, 8, 12, 16);
+        private void Paprika_Click(object sender, RoutedEventArgs e) => ToppingPick("paprika, ", 4, 8, 12, 16);
 
-        private void Pizzakrydder_Click(object sender, RoutedEventArgs e) => Write("pizzakrydder, ", 2, 4, 6, 8);
+        private void Pizzakrydder_Click(object sender, RoutedEventArgs e) => ToppingPick("pizzakrydder, ", 2, 4, 6, 8);
         #endregion
 
         #region choose other pizzas to modify
-        private void one1_Click(object sender, RoutedEventArgs e) => Write("Napoli, ", standard[0], standard[1], standard[2], standard[3]);
+        private void One1_Click(object sender, RoutedEventArgs e) => ToppingPick("Napoli, ", standard[0], standard[1], standard[2], standard[3]);
 
-        private void two2_Click(object sender, RoutedEventArgs e) => Write("Palermo, ", standard[0], standard[1], standard[2], standard[3]);
+        private void Two2_Click(object sender, RoutedEventArgs e) => ToppingPick("Palermo, ", standard[0], standard[1], standard[2], standard[3]);
 
-        private void three3_Click(object sender, RoutedEventArgs e) => Write("Catania, ", standard[0], standard[1], standard[2], standard[3]);
+        private void Three3_Click(object sender, RoutedEventArgs e) => ToppingPick("Catania, ", standard[0], standard[1], standard[2], standard[3]);
         #endregion
 
         #region Choose size of pizza
@@ -154,11 +162,11 @@ namespace Pizzeria
         #endregion
 
         #region Drinks
-        private void Lille_Click(object sender, RoutedEventArgs e) => Drink(30, 40, 50, 60);
+        private void Lille_Click(object sender, RoutedEventArgs e) => DrinkPick(30, 40, 50, 60);
 
-        private void Mellem_Click(object sender, RoutedEventArgs e) => Drink(40, 50, 60, 70);
+        private void Mellem_Click(object sender, RoutedEventArgs e) => DrinkPick(40, 50, 60, 70);
 
-        private void Stor_Click(object sender, RoutedEventArgs e) => Drink(50, 60, 70, 800);
+        private void Stor_Click(object sender, RoutedEventArgs e) => DrinkPick(50, 60, 70, 80);
         #endregion
 
         #region Paytime buttons
