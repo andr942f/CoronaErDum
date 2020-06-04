@@ -179,3 +179,126 @@ class Edabit(object):
 
     def equation(s):
         return eval(s)
+
+    def profitable_gamble(prob, prize, pay):
+        return prob * prize > pay
+
+    def has_key(dictionary, key):
+        return key in dictionary
+
+    def has_bugs(buggy_code):
+        # return "sad days" if buggy_code = True else "it's a good day"
+        if buggy_code:
+            return "sad days"
+        else:
+            return "it's a good day"
+
+    def get_fillings(sandwich):
+        return sandwich[1:-1]
+
+    def pos_com(num):
+        return 2**num
+
+    def count_true(lst):
+        return sum(lst)
+
+    def football_points(wins, draws, losses):
+        return (wins * 3) + (draws * 1) + (losses * 0)
+
+    # Fix this broken code!
+    def check_equals(lst1, lst2):
+        return True if lst1 == lst2 else False
+
+    def should_serve_drinks(age, on_break):
+        return True if age > 17 and on_break == False else False
+
+    def match(s1, s2):
+        return s1.casefold() == s2.casefold()
+
+    def find_index(lst, txt):
+        return lst.index(txt)
+
+    def modify_last(txt, n):
+        return txt + txt[-1] * (n - 1)
+
+    def can_nest(list1, list2):
+        return max(list1) < max(list2) and min(list1) > min(list2)
+
+    def has_same_bread(lst1, lst2):
+        return lst1[0] == lst2[0] and lst1[-1] == lst2[-1]
+
+    def parity(n):
+        return "even" if n % 2 == 0 else "odd"
+
+    def sort_nums_ascending(lst):
+        return sorted(lst)
+
+    def uhh(a, b, c):
+        template = "Their names were: {}, {} and {}."
+        return template.format(a, b, c)
+
+    def char_count(txt1, txt2):
+        return txt2.count(txt1)
+
+    def yeah_nope(b):
+        return "yeah" if b == True else "nope"
+
+    def km_to_miles(km):
+        return round(km * 0.621371, 5)
+
+    def get_word(left, right):
+        return left.capitalize() + right
+
+    def same_case(txt):
+        return txt.isupper() or txt.islower()
+
+    def check_equality(a, b):
+        return a is b
+
+    def first_one(a, b=None, c=None, d=None):
+        return a or b or c or d or 'not found'
+
+    def reverse_case(txt):
+        return txt.swapcase()
+
+    def hash_plus_count(txt):
+        return [txt.count('#'), txt.count('+')]
+
+    def flip(y):
+        return not y
+
+    class BasicPlan:
+        can_stream = True
+        can_download = True
+        num_of_devices = 1
+        has_SD = True
+        has_HD = False
+        has_UHD = False
+        price = '$8.99'
+
+    class StandardPlan:
+        can_stream = True
+        can_download = True
+        num_of_devices = 2
+        has_SD = True
+        has_HD = True
+        has_UHD = False
+        price = '$12.99'
+
+    class PremiumPlan:
+        can_stream = True
+        can_download = True
+        num_of_devices = 4
+        has_SD = True
+        has_HD = True
+        has_UHD = True
+        price = '$15.99'
+
+# Write the classes for StandardPlan and PremiumPlan here!
+
+    def wumbo(words):
+        return words.replace("M", "W")
+
+    def googlify(n):
+        return "G" + "o" * n + "gle" if n > 1 else "invalid"
+	
