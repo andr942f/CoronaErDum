@@ -300,5 +300,91 @@ class Edabit(object):
         return words.replace("M", "W")
 
     def googlify(n):
-        return "G" + "o" * n + "gle" if n > 1 else "invalid"
+        return "Go" * n + "gle" if n > 1 else "invalid"
+
+    def number_syllables(word):
+        return len(word.split('-'))
+
+    def get_vote_count(votes):
+        return votes.get("upvotes") - votes.get("downvotes")
+
+    def reverse(lst):
+        return lst[::-1]
+
+    def negate(lst):
+        return [-i for i in lst]
+
+    def equilibrium(x):
+        return "positive" if x > 0 else "negative" if x < 0 else True
+
+    def word_lengths(lst):
+        return [len(x) for x in lst]
+
+    def additive_inverse(lst):
+        return [-x for x in lst]
+
+    def get_sequence(low, high):
+        return list(range(low, high +1))
+
+    def get_case(txt):
+        return "upper" if txt.isupper() else "lower" if txt.islower() else "mixed"
+
+    def get_multiplied_list(lst):
+        return [x * 2 for x in lst]
+
+    def sum_first_n_nums(lst, n):
+        return sum(lst[0:n])
+
+    def mean(nums):
+        return round(sum(nums) / len(nums), 1) 
+
+    def score_calculator(easy, med, hard):
+        return "invalid" if any([x < 0 for x in [easy, med, hard]]) else sum([easy * 5, med * 10, hard * 20])
+
+    def search(lst, item):
+        return -1 if item not in lst else lst.index(item)
+
+    def search(lst, item):
+        return -1 if item not in lst else lst.index(item)
+
+    def count_syllables(txt):
+        return len(txt)//2
+
+    def n_sided_shape(n):
+        dicto = {
+	    1:"circle",
+	    2:"semi-circle",
+	    3:"triangle",
+	    4:"square",
+	    5:"pentagon",
+	    6:"hexagon",
+	    7:"heptagon",
+	    8:"octagon",
+	    9:"nonagon",
+	    10:"decagon" }
+        
+        return dicto[n]
+
+    def reverse_capitalize(txt):
+        return txt[::-1].upper()
+
+    def say_hello_bye(name, num):
+        return "Hello " + name.capitalize() if num == 1 else "Bye " + name.capitalize()
+
+    def hello_world(num):
+        return "Hello" if num % 5 else "World" if num % 3 else "Hello World"
+
+
+    def md_format(word, style):
+        styledisc = {
+		"b": "**",
+		"i": "_",
+		"c": "`",
+		"s": "~~"
+	    }
+        
+        return styledisc[style] + word + styledisc[style]
+
+    def greater_than_one(frac):
+        return eval(frac) > 1
 	

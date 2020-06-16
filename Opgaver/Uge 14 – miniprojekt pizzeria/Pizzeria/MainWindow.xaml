@@ -38,7 +38,7 @@
         <Button x:Name="Oliven" Content="Oliven" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,56,33,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="Oliven_Click" Grid.Column="1"/>
 
         <Button x:Name="Indbagt" Content="Indbagt" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,115.8,112.6,0" Height="20" Click="Indbagt_Click" Grid.Column="1"/>
-        <Button x:Name="Normal" Content="Normal" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,115.8,32.6,0" Height="20" Click="Normal_Click" Grid.Column="1"/>
+        <Button x:Name="UFO" Content="UFO" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,115.8,32.6,0" Height="20" Click="UFO_Click" Grid.Column="1"/>
         <Button x:Name="Paprika" Content="Paprika" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,80.8,112.6,0" Height="20" Click="Paprika_Click" Grid.Column="1"/>
         <Button x:Name="Pizzakrydder" Content="Pizzakrydder" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,80.8,32.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Click="Pizzakrydder_Click" Grid.Column="1"/>
         <Button x:Name="Lille" Content="Lille drik" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,154.8,32.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Lille_Click"/>
@@ -77,10 +77,9 @@
         <Button x:Name="three2" Content="Kylling" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,86,32.6,0" RenderTransformOrigin="1.307,0.45" Grid.Column="1" Click="Three2_Click"/>
         <Button x:Name="three3" Content="Dressing" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,112,112.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Three3_Click"/>
         <Button x:Name="three4" Content="Chili" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,112,32.6,0" RenderTransformOrigin="1.307,0.45" Height="20" Grid.Column="1" Click="Three4_Click"/>
-
-        <TextBox x:Name="Amount_of_drink" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="130.8,179.8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35" TextChanged="Amount_of_drink_TextChanged"/>
-
-
+        <TextBox x:Name="antal_drik" Grid.Column="1" HorizontalAlignment="Left" BorderThickness="0" Height="20" Foreground="White" Background="#FF191919" BorderBrush="WhiteSmoke" Margin="124.8,174.8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Antal Drik" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.554,1.8"/>
+        <TextBox x:Name="Amount_of_drink" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="136.8,189.8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35" TextChanged="Amount_of_drink_TextChanged" RenderTransformOrigin="0.554,1.8"/>
+        
         <!-- end-->
 
     </Grid>

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Text.RegularExpressions;
 
 namespace Pizzeria
 {
@@ -70,9 +72,17 @@ namespace Pizzeria
                 price[3] = price[3] - mega - mega;
             }
             PriceList.Text = $"Alm.: {price[0]} kr.\n" + $"Deep pan: {price[1]} kr.\n" + $"Familie: {price[2]} kr.\n" + $"Mega: {price[3]} kr.\n";
-            return IngList.Text.Contains($"Ekstra {item}") ?
+            if (Regex.IsMatch(IngList.Text, @"Tomatsovs, ost, \w*, \w*, \w*, \w*, \w*"))
+            {
+                MessageBox.Show("Please only enter 4 ingredients");
+                return IngList.Text = "Med Tomatsovs, ost, ";
+            }
+            else
+            {
+                return IngList.Text.Contains($"Ekstra {item}") ?
                 IngList.Text = IngList.Text.Replace($"Ekstra {item}", "") : IngList.Text.Contains(item) ?
                 IngList.Text = IngList.Text.Replace(item, $"Ekstra {item}") : IngList.Text += item;
+            }
         }
         /// <summary>
         /// price of drinks/sizes
@@ -129,7 +139,7 @@ namespace Pizzeria
         #region Crust and dough
         private void Indbagt_Click(object sender, RoutedEventArgs e) => ToppingPick(LavSelv, SizeChoose, lavSelv, "indbagt, ", 32, 42, 52, 62);
 
-        private void Normal_Click(object sender, RoutedEventArgs e) => ToppingPick(LavSelv, SizeChoose, lavSelv, "normal, ", 30, 40, 50, 60);
+        private void UFO_Click(object sender, RoutedEventArgs e) => ToppingPick(LavSelv, SizeChoose, lavSelv, "UFO, ", 30, 40, 50, 60);
         #endregion
 
         #region ingridents
@@ -169,10 +179,31 @@ namespace Pizzeria
         #region Drinks
         private void Amount_of_drink_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(Amount_of_drink.Text, "[^0-9]"))
+            if (Regex.IsMatch(Amount_of_drink.Text, "[^0-9]"))
             {
                 MessageBox.Show("Please enter only numbers.");
                 Amount_of_drink.Text = Amount_of_drink.Text.Remove(Amount_of_drink.Text.Length - 1);
+
+                List<CheckBox> i = new List<CheckBox>
+                {
+                    AlmCheck,
+                    DeepCheck,
+                    FamCheck,
+                    MegaCheck,
+                    AlmCheck_NAPOLI,
+                    DeepCheck_NAPOLI,
+                    FamCheck_NAPOLI,
+                    MegaCheck_NAPOLI,
+                    AlmCheck_CATANIA,
+                    DeepCheck_CATANIA,
+                    FamCheck_CATANIA,
+                    MegaCheck_CATANIA,
+                    AlmCheck_PALERMO,
+                    DeepCheck_PALERMO,
+                    FamCheck_PALERMO,
+                    MegaCheck_PALERMO
+                };
+
             }
 
         }
@@ -188,13 +219,13 @@ namespace Pizzeria
         /// </summary>
         /// <param name="dis">Money amount</param>
         /// <returns></returns>
+        public double count = 0;
         public string Payhelp(double dis)
         {
             payment pay = new payment();
             pay.Show();
             return pay.tak.Text += $"Tak for købet! Det bliver: {dis} kr.";
         }
-        public double count = 0;
         public void FullPrice(bool? alm, bool? deep, bool? fam, bool? mega)
         {
             if (alm == true)
@@ -206,7 +237,6 @@ namespace Pizzeria
             if (mega == true)
                 count += standard[3];
         }
-
         public void Pay_Click(object sender, RoutedEventArgs e)
         {
             if (AlmCheck.IsChecked == true)
