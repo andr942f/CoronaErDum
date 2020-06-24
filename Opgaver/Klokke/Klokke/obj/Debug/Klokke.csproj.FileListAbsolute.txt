@@ -1,0 +1,14 @@
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.csprojAssemblyReference.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\MainWindow.g.cs
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\App.g.cs
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke_MarkupCompile.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke_MarkupCompile.lref
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\bin\Debug\Klokke.exe.config
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\bin\Debug\Klokke.exe
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\bin\Debug\Klokke.pdb
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\MainWindow.baml
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.g.resources
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.Properties.Resources.resources
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.csproj.GenerateResource.cache
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.exe
+C:\Users\Bruger\Desktop\hubgit\CoronaErDum\Opgaver\Klokke\Klokke\obj\Debug\Klokke.pdb
