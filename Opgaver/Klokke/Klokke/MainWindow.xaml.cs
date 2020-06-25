@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -47,12 +48,13 @@ namespace Klokke
 
         #region Stopwatch Code
         TimeSpan lap;
+        Stopwatch stopwatch = new Stopwatch();
         /// <summary>
         /// Display Time
         /// </summary>
         public void Timer_Tick(object sender, EventArgs e)
         {
-            TimeSpan sw = ClockInfo.StopWatch.Elapsed;
+            TimeSpan sw = stopwatch.Elapsed;
             lap = ClockInfo.Lap.Elapsed;
             StopWatchDisplay.Content = string.Format("{0:00}:{1:00}:{2:00}", sw.Hours, sw.Minutes, sw.Seconds);
             LapDisplay.Content = string.Format("{0:00}:{1:00}:{2:00}", lap.Hours, lap.Minutes, lap.Seconds);
@@ -67,7 +69,7 @@ namespace Klokke
         /// </summary>
         private void StopwatchStart_Click(object sender, RoutedEventArgs e)
         {
-            ClockInfo.StopWatch.Start();
+            stopwatch.Start();
             ClockInfo.Lap.Start();
             Updater(Timer_Tick);
         }
@@ -77,14 +79,14 @@ namespace Klokke
         private void StopwatchStop_Click(object sender, RoutedEventArgs e)
         {
             LapTimer.Items.Clear();
-            ClockInfo.StopWatch.Stop();
+            stopwatch.Stop();
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void StopwatchReset_Click(object sender, RoutedEventArgs e) => ClockInfo.StopWatch.Restart();
+        private void StopwatchReset_Click(object sender, RoutedEventArgs e) => stopwatch.Restart();
         #endregion
 
         #region Countdown Code
@@ -92,7 +94,8 @@ namespace Klokke
         /// Counts down each second, and makes sure there are no letters in the textboxes
         /// </summary>
         TimeSpan form;
-        List<string> list = new List<string>();
+        private int currentSelection;
+        readonly List<TimerClock> list = new List<TimerClock>();
         private void CountDownTimer(object sender, EventArgs e)
         {
             form = t - ClockInfo.CountDown.Elapsed;
@@ -110,47 +113,93 @@ namespace Klokke
             }
             else
             {
-                
+                    for (int i = 0; i < list.Count; i++)
+                        if (list[i].StopWatch.IsRunning && i != CountDownList.SelectedIndex)
+                            CountDownList.Items[i] = list[i].TimerFormat();
             }
         }
-    }
-    private void AddTimer_Click(object sender, RoutedEventArgs e)
-    {
-        string timeSpan = string.Format("{0:00}:{1:00}:{2:00}", form.Hours, form.Minutes, form.Seconds);
-        list.Add(timeSpan);
-        CountDownList.Items.Add(list);
-    }
-    private void StartCountdown_Click(object sender, RoutedEventArgs e) => ClockInfo.CountDown.Start();
-    private void PlusCountdown_Click(object sender, RoutedEventArgs e) => t += new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
-    private void MinusCountdown_Click(object sender, RoutedEventArgs e) => t -= new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
-    private void StopCountdown_Click(object sender, RoutedEventArgs e) => ClockInfo.CountDown.Stop();
-    private void ResetCountdown_Click(object sender, RoutedEventArgs e)
-    {
-        ClockInfo.CountDown.Stop();
-        CountDown.Content = string.Format("{0:00}:{1:00}:{2:00}", 0, 0, 0);
-    }
-    #endregion
+        private void AddTimer_Click(object sender, RoutedEventArgs e)
+        {
+            CountDownList.Items.Clear();
+            list.Add(new TimerClock(form));
+            foreach (var item in list)
+                CountDownList.Items.Add(item.TimerFormat());
+        }
 
-    #region Watch code
-    /// <summary>
-    /// When alarm is done, let me know
-    /// </summary>
-    private void AlarmBib(object sender, EventArgs e)
-    {
-        if (WatchList.Items.Contains($"{DateTime.Now.DayOfWeek.ToString()} - {Display.TimeNow()}"))
-            MessageBox.Show(SelvText.Text);
+        private void StartCountdown_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                list[CountDownList.SelectedIndex].Resume();
+            }
+            catch
+            {
+                for (int x = 0; x < list.Count; x++)
+                    list[x].Resume();
+            }
+        }
+        private void StopCountdown_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                list[CountDownList.SelectedIndex].Pause();
+            }
+            catch
+            {
+                for (int x = 0; x < list.Count; x++)
+                    list[x].Pause();
+            }
+        }
+        private void ResetCountdown_Click(object sender, RoutedEventArgs e)
+        {
+            CountDownList.Items.Clear();
+            try
+            {
+                list[CountDownList.SelectedIndex].StopWatch.Reset();
+            }
+            catch
+            {
+                for (int x = 0; x < list.Count; x++)
+                    list[x].StopWatch.Reset();
+            }
+        }
+        private void PlusCountdown_Click(object sender, RoutedEventArgs e)
+        {
+            if (CountDownList.SelectedIndex != -1)
+                list[CountDownList.SelectedIndex].ts += new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
+            else
+                t += new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
+        }
+
+        private void MinusCountdown_Click(object sender, RoutedEventArgs e)
+        {
+            if (CountDownList.SelectedIndex != -1)
+                list[CountDownList.SelectedIndex].ts -= new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
+            else
+                t -= new TimeSpan(Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text));
+        }
+        #endregion
+
+        #region Watch code
+        /// <summary>
+        /// When alarm is done, let me know
+        /// </summary>
+        private void AlarmBib(object sender, EventArgs e)
+        {
+            if (WatchList.Items.Contains($"{DateTime.Now.DayOfWeek.ToString()} - {Display.TimeNow()}"))
+                MessageBox.Show(SelvText.Text);
+
+        }
+        private void WatchAdd_Click(object sender, RoutedEventArgs e)
+        {
+            WatchList.Items.Add($"{DayOfWeek.Text} - {Hours1.Text}:{Minutes1.Text}:{Seconds1.Text} ({SelvText.Text})");
+        }
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            WatchList.Items.Remove(EditList.Text);
+            WatchList.Items.Add(EditList.Text = $"{DayOfWeek.Text} - {Hours1.Text}:{Minutes1.Text}:{Seconds1.Text} ({SelvText.Text})");
+        }
+        #endregion
 
     }
-    private void WatchAdd_Click(object sender, RoutedEventArgs e)
-    {
-        WatchList.Items.Add($"{DayOfWeek.Text} - {Hours1.Text}:{Minutes1.Text}:{Seconds1.Text} ({SelvText.Text})");
-    }
-    private void Edit_Click(object sender, RoutedEventArgs e)
-    {
-        WatchList.Items.Remove(EditList.Text);
-        WatchList.Items.Add(EditList.Text = $"{DayOfWeek.Text} - {Hours1.Text}:{Minutes1.Text}:{Seconds1.Text} ({SelvText.Text})");
-    }
-    #endregion
-
-}
 }

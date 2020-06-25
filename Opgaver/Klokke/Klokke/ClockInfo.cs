@@ -12,7 +12,7 @@ namespace Klokke
     {
         
         public static DispatcherTimer Time = new DispatcherTimer();
-        public static readonly Stopwatch StopWatch = new Stopwatch();
+        public Stopwatch StopWatch = new Stopwatch();
         public static readonly Stopwatch Lap = new Stopwatch();
         public static readonly Stopwatch CountDown = new Stopwatch();
         public static string Format => "HH:mm:ss";
