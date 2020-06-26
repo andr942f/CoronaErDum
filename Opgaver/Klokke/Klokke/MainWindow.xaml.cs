@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Klokke
 {
@@ -42,7 +44,7 @@ namespace Klokke
             Updater(LiveTime_Tick);
             Updater(LiveTime_Tick2);
             Updater(CountDownTimer);
-            Updater(AlarmBib);
+            Updater(DrawMyText);
 
         }
 
@@ -113,9 +115,9 @@ namespace Klokke
             }
             else
             {
-                    for (int i = 0; i < list.Count; i++)
-                        if (list[i].StopWatch.IsRunning && i != CountDownList.SelectedIndex)
-                            CountDownList.Items[i] = list[i].TimerFormat();
+                for (int i = 0; i < list.Count; i++)
+                    if (list[i].StopWatch.IsRunning && i != CountDownList.SelectedIndex)
+                        CountDownList.Items[i] = list[i].TimerFormat();
             }
         }
         private void AddTimer_Click(object sender, RoutedEventArgs e)
@@ -181,15 +183,6 @@ namespace Klokke
         #endregion
 
         #region Watch code
-        /// <summary>
-        /// When alarm is done, let me know
-        /// </summary>
-        private void AlarmBib(object sender, EventArgs e)
-        {
-            if (WatchList.Items.Contains($"{DateTime.Now.DayOfWeek.ToString()} - {Display.TimeNow()}"))
-                MessageBox.Show(SelvText.Text);
-
-        }
         private void WatchAdd_Click(object sender, RoutedEventArgs e)
         {
             WatchList.Items.Add($"{DayOfWeek.Text} - {Hours1.Text}:{Minutes1.Text}:{Seconds1.Text} ({SelvText.Text})");
@@ -201,5 +194,9 @@ namespace Klokke
         }
         #endregion
 
+        private void DrawMyText(object sender, EventArgs e)
+        {
+            DigitalTimeDisplay.Content = string.Format("{0:00}:{1:00}:{2:00}", Display.ToRoman(DateTime.Now.Hour), Display.ToRoman(DateTime.Now.Minute), Display.ToRoman(DateTime.Now.Second));
+        }
     }
 }
